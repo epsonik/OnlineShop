@@ -8,6 +8,7 @@ import java.util.List;
  * Created by mbarto on 22.08.16.
  */
 public interface ProductService {
-List<Product> getAllProducts();
+
+    List<Product> getAllProducts();
 
 }
