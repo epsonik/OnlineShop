@@ -33,4 +33,9 @@ public class ProductServiceImpl implements ProductService {
 		return productRepository.getProductsByFilter(filterParams);
 	}
 
+	public void addProduct(Product product) {
+		productRepository.addProduct(product);
+
+	}
+
 }
