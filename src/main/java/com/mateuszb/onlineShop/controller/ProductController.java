@@ -4,10 +4,15 @@ import java.util.List;
 import java.util.Map;
 
 import com.mateuszb.onlineShop.domain.Product;
+import com.sun.xml.internal.org.jvnet.staxex.NamespaceContextEx;
+import com.sun.xml.internal.ws.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mateuszb.onlineShop.service.ProductService;
@@ -58,9 +63,17 @@ public class ProductController {
 		return "addProduct";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct){
+	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct, BindingResult result){
 		productService.addProduct(newProduct);
+		String[] suppressedFields =result.getSuppressedFields();
+		if(suppressedFields.length>0){
+			throw new RuntimeException("Proba wiązania niedozwolonych pol:" );
+		}
 		return "redirect:/products";
+	}
+	@InitBinder
+	public void initialiseBinder(WebDataBinder binder){
+		binder.setDisallowedFields("unitsInOrder", "discontinued");
 	}
 }
 
