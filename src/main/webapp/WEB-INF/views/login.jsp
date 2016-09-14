@@ -1,6 +1,7 @@
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -46,6 +47,19 @@
         <div class="container">
             <br><h1> Witaj w sklepie internetowym! </h1>
             <p> Wyjatkowym i jedynym sklepie internetowym </p>
+            <h2>Formularz logowania</h2>
+            <br>
+            <form:form action="${pageContext.request.contextPath}/logowanie" modelAttribute="Form" method="post"> 
+                Login: 
+                <form:input path="login" id="login"/> 
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="login"></form:errors></c:if> 
+                <br> 
+                Hasło: 
+                <form:input path="password" id="password" type="password"/>
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="password"></form:errors></c:if> 
+                <br>
+                <input type="submit" value="Zaloguj!"/>
+            </form:form>
         </div>
     </div>
 </section>

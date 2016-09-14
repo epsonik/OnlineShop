@@ -29,13 +29,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href='<spring:url value="/"/>'>Mati Shop</a>
+            <a class="navbar-brand" href='<spring:url value="/onlineHome"/>'>Mati Shop</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href='<spring:url value="/"/>'>Strona główna</a></li>
-                <li><a href='<spring:url value="/logowanie"/>'>Logowanie</a></li>
-                <li><a href='<spring:url value="/rejestracja"/>'>Rejestracja</a></li>
+                <li class="active"><a href='<spring:url value="/onlineHome"/>'>Strona główna</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href='<spring:url value="/"/>'>Wyloguj</a></li>
             </ul>
         </div>
     </div>
@@ -44,8 +45,7 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj w sklepie internetowym! </h1>
-            <p> Wyjatkowym i jedynym sklepie internetowym </p>
+            <br><h1> Witaj zalogowany użytkowniku! </h1><br>
             <h2>Produkty</h2>
             <p>Wszystkie produkty dostępne w naszym sklepie</p>
         </div>
@@ -69,7 +69,6 @@
                                     class="glyphicon-info-sign glyphicon" /></span> Szczegóły
                             </a>
                         </p>
-
                     </div>
                 </div>
             </div>

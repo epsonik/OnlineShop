@@ -16,9 +16,7 @@
         <div class="container">
             <h1>
                 Produkty
-                <p>
-                    Dodaj produkty
-                </p>
+                <p> Dodaj produkty </p>
             </h1>
         </div>
     </div>
@@ -27,7 +25,7 @@
     <form:form modelAttribute="newProduct" class="form-horizontal">
         <fieldset>
             <legend>
-                Dodaj nowy prosuktc
+                Dodaj nowy produkt
             </legend>
             <div class="form-group">
                 <label class="conrol-label col-lg-2 col-lg-2" for ="productId"> Id produktu</label>
@@ -80,7 +78,7 @@
             </div>
 
             <div class="form-group">
-                <label class="control-label col-lg-2" for="condition"> Stan</label>
+                <%--@declare id="condition"--%><label class="control-label col-lg-2" for="condition"> Stan</label>
                 <div class="col=lg-10">
                     <form:radiobutton path="condition" value="New"/> Nowy
                     <form:radiobutton path="condition" value="Old"/> Uzywany

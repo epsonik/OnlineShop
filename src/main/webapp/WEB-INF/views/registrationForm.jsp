@@ -49,7 +49,7 @@
             <p> Wyjatkowym i jedynym sklepie internetowym </p>
             <h2>Formularz rejestracyjny</h2>
             <br>
-            <form:form action="${pageContext.request.contextPath}/rejestracja" modelAttribute="form" method="post"> 
+            <form:form action="${pageContext.request.contextPath}/rejestracja" modelAttribute="Form" method="post"> 
                 Imię: 
                 <form:input path="firstName" id="firstName"/>
                  <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="firstName"></form:errors></c:if> 
@@ -60,7 +60,7 @@
                 <br> 
                 Adres email: 
                 <form:input path="email" id="email"/>
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="email"></form:errors></c:if> 
+                <c:if test="${pageContext.request.method == 'POST'}"><form path="email"></form></c:if> 
                 <br> 
                 Login: 
                 <form:input path="login" id="login"/> 
