@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
-	private final ProductRepository productRepository;
+    private final ProductRepository productRepository;
 
     @Autowired
     public HomeController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
-    @RequestMapping(value="/")
-	public String welcome(Model model) {
-		model.addAttribute("products", productRepository.getAllProducts());
-		return "home";
-	}
+    @RequestMapping(value = {"/", "/home"})
+    public String welcome(Model model) {
+        model.addAttribute("products", productRepository.getAllProducts());
+        return "home";
+    }
 }

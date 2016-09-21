@@ -1,5 +1,5 @@
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
@@ -15,7 +15,8 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -35,8 +36,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href='<spring:url value="/"/>'>Strona główna</a></li>
-                <li><a href='<spring:url value="/logowanie"/>'>Logowanie</a></li>
-                <li><a href='<spring:url value="/rejestracja"/>'>Rejestracja</a></li>
+                <li><a href='<spring:url value="/login"/>'>Logowanie</a></li>
+                <li><a href='<spring:url value="/registrationForm"/>'>Rejestracja</a></li>
             </ul>
         </div>
     </div>
@@ -45,14 +46,16 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj w sklepie internetowym! </h1>
+            <br>
+            <h1> Witaj w sklepie internetowym! </h1>
             <p> Wyjatkowym i jedynym sklepie internetowym </p>
             <h2>Formularz rejestracyjny</h2>
             <br>
-            <form:form action="${pageContext.request.contextPath}/rejestracja" modelAttribute="Form" method="post"> 
+            <form:form action="${pageContext.request.contextPath}/registrationForm" modelAttribute="Form" method="post"> 
                 Imię: 
                 <form:input path="firstName" id="firstName"/>
-                 <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="firstName"></form:errors></c:if> 
+                 <c:if test="${pageContext.request.method == 'POST'}"><form:errors
+                        path="firstName"></form:errors></c:if> 
                 <br> 
                 Nazwisko: 
                 <form:input path="lastName" id="lastName"/> 
@@ -60,7 +63,7 @@
                 <br> 
                 Adres email: 
                 <form:input path="email" id="email"/>
-                <c:if test="${pageContext.request.method == 'POST'}"><form path="email"></form></c:if> 
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="email"></form:errors></c:if> 
                 <br> 
                 Login: 
                 <form:input path="login" id="login"/> 

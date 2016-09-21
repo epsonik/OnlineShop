@@ -14,7 +14,7 @@ public class JdbcFormDAO implements FormDAO {
 
     private DataSource dataSource;
 
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
@@ -35,13 +35,14 @@ public class JdbcFormDAO implements FormDAO {
             ps.executeUpdate();
             ps.close();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             if (connection != null) {
-                try{
+                try {
                     connection.close();
-                } catch (SQLException e) { }
+                } catch (SQLException e) {
+                }
             }
         }
     }
@@ -55,12 +56,12 @@ public class JdbcFormDAO implements FormDAO {
         try {
             connection = dataSource.getConnection();
             PreparedStatement ps = connection.prepareCall(sqlStatement);
-            ps.setInt(1,id);
+            ps.setInt(1, id);
             Form form = null;
             ResultSet rs = ps.executeQuery();
 
-            if(rs.next()){
-                form = new Form(rs.getInt("id"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("email"),
+            if (rs.next()) {
+                form = new Form(rs.getString("firstName"), rs.getString("lastName"), rs.getString("email"),
                         rs.getString("login"), rs.getString("password"));
             }
 
@@ -68,13 +69,14 @@ public class JdbcFormDAO implements FormDAO {
             ps.close();
 
             return form;
-        } catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             if (connection != null) {
-                try{
+                try {
                     connection.close();
-                } catch (SQLException e) { }
+                } catch (SQLException e) {
+                }
             }
         }
     }
@@ -87,12 +89,12 @@ public class JdbcFormDAO implements FormDAO {
         try {
             connection = dataSource.getConnection();
             PreparedStatement ps = connection.prepareCall(sqlStatement);
-            ps.setString(1,login);
+            ps.setString(1, login);
             Form form = null;
             ResultSet rs = ps.executeQuery();
 
-            if(rs.next()){
-                form = new Form(rs.getInt("id"), rs.getString("firstName"), rs.getString("lastName"), rs.getString("email"),
+            if (rs.next()) {
+                form = new Form(rs.getString("firstName"), rs.getString("lastName"), rs.getString("email"),
                         rs.getString("login"), rs.getString("password"));
             }
 
@@ -100,13 +102,14 @@ public class JdbcFormDAO implements FormDAO {
             ps.close();
 
             return form;
-        } catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             if (connection != null) {
-                try{
+                try {
                     connection.close();
-                } catch (SQLException e) { }
+                } catch (SQLException e) {
+                }
             }
         }
     }

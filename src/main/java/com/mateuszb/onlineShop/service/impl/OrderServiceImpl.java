@@ -9,19 +9,20 @@ import com.mateuszb.onlineShop.domain.repository.ProductRepository;
 @Service
 public class OrderServiceImpl implements OrderService {
 
-	@Autowired
-	private ProductRepository productRepository;
-	
-	public void processOrder(String productId, long quantity) {
-		Product productById = productRepository.getProductById(productId);
+    @Autowired
+    private ProductRepository productRepository;
 
-		if(productById.getUnitsInStock() < quantity){
-			throw new IllegalArgumentException("Zbyt ma�o towaru. Obecna liczba sztuk w magazynie "+ productById.getUnitsInStock());
-		}
-		
-		productById.setUnitsInStock(productById.getUnitsInStock() - quantity);
-	}
-	public void processName(String productId, String name2){
+    public void processOrder(String productId, long quantity) {
+        Product productById = productRepository.getProductById(productId);
+
+        if (productById.getUnitsInStock() < quantity) {
+            throw new IllegalArgumentException("Zbyt ma�o towaru. Obecna liczba sztuk w magazynie " + productById.getUnitsInStock());
+        }
+
+        productById.setUnitsInStock(productById.getUnitsInStock() - quantity);
+    }
+
+    public void processName(String productId, String name2) {
         Product productById = productRepository.getProductById(productId);
         productById.setName(name2);
     }

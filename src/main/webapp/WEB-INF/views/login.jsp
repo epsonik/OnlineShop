@@ -1,5 +1,5 @@
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
@@ -15,7 +15,8 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -35,8 +36,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href='<spring:url value="/"/>'>Strona główna</a></li>
-                <li><a href='<spring:url value="/logowanie"/>'>Logowanie</a></li>
-                <li><a href='<spring:url value="/rejestracja"/>'>Rejestracja</a></li>
+                <li><a href='<spring:url value="/login"/>'>Logowanie</a></li>
+                <li><a href='<spring:url value="/registrationForm"/>'>Rejestracja</a></li>
             </ul>
         </div>
     </div>
@@ -45,21 +46,34 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj w sklepie internetowym! </h1>
+            <br>
+            <h1> Witaj w sklepie internetowym! </h1>
             <p> Wyjatkowym i jedynym sklepie internetowym </p>
             <h2>Formularz logowania</h2>
             <br>
-            <form:form action="${pageContext.request.contextPath}/logowanie" modelAttribute="Form" method="post"> 
-                Login: 
-                <form:input path="login" id="login"/> 
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="login"></form:errors></c:if> 
-                <br> 
-                Hasło: 
-                <form:input path="password" id="password" type="password"/>
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="password"></form:errors></c:if> 
-                <br>
-                <input type="submit" value="Zaloguj!"/>
-            </form:form>
+            <c:url var="loginUrl" value="/login"/>
+            <form action="${loginUrl}" method="post">
+                <c:if test="${param.error != null}">
+                    <div>
+                        <p>Zly uzytkownik lub haslo!</p>
+                    </div>
+                </c:if>
+                <c:if test="${param.logout != null}">
+                    <div>
+                        <p>Zostales wylogowany cwoku</p>
+                    </div>
+                </c:if>
+                <div>
+                    <input type="text" id="username" name="login" placeholder="Podaj Login" required>
+                </div>
+                <div>
+                    <input type="text" id="password-panel" name="password" placeholder="Podaj haslo" required>
+                </div>
+                <div>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf_token}"/>
+                    <input type="submit" value="Zaloguj sie!">
+                </div>
+            </form>
         </div>
     </div>
 </section>

@@ -10,20 +10,21 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import javax.validation.Valid;
 
 @RequestMapping("/")
 @Controller
 public class RegistrationController {
 
-    @RequestMapping(value="/rejestracja", method=RequestMethod.GET)
-    public String form(){
+    @RequestMapping(value = "/registrationForm", method = RequestMethod.GET)
+    public String form() {
         return "registrationForm";
     }
 
-    @RequestMapping(value="/rejestracja", method=RequestMethod.POST)
-    public String handleTheForm(@ModelAttribute("Form") @Valid Form form, BindingResult result){
-        if(result.hasErrors()){
+    @RequestMapping(value = "/registrationForm", method = RequestMethod.POST)
+    public String handleTheForm(@ModelAttribute("Form") @Valid Form form, BindingResult result) {
+        if (result.hasErrors()) {
             return "registrationForm";
         } else {
             ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-form.xml");
@@ -32,14 +33,14 @@ public class RegistrationController {
 
             ApplicationContext context1 = new ClassPathXmlApplicationContext("/Spring-module-role.xml");
             RoleDAO roleDAO = (RoleDAO) context1.getBean("roleDAO");
-            roleDAO.insert(formDAO.findByLogin(form.getLogin()).getId());
+            roleDAO.insert(formDAO.findByLogin(form.getLogin()).getLogin());
 
             return "redirect:/";
         }
     }
 
     @ModelAttribute("Form")
-    public Form getFormularz(){
+    public Form getFormularz() {
         return new Form();
     }
 }

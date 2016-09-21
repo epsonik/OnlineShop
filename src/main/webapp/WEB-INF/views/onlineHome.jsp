@@ -1,5 +1,5 @@
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
@@ -14,7 +14,8 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -36,7 +37,8 @@
                 <li class="active"><a href='<spring:url value="/onlineHome"/>'>Strona główna</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href='<spring:url value="/"/>'>Wyloguj</a></li>
+                <li><strong>${user}</strong></li>
+                <li><a href="<c:url value="/logout"/>">Wyloguj</a></li>
             </ul>
         </div>
     </div>
@@ -45,7 +47,8 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj zalogowany użytkowniku! </h1><br>
+            <br>
+            <h1> Witaj zalogowany użytkowniku! </h1><br>
             <h2>Produkty</h2>
             <p>Wszystkie produkty dostępne w naszym sklepie</p>
         </div>
@@ -65,8 +68,7 @@
                         <p>
                             <a
                                     href=" <spring:url value="/products/product?id=${product.productId}" /> "
-                                    class="btn btn-primary"> <span
-                                    class="glyphicon-info-sign glyphicon" /></span> Szczegóły
+                                    class="btn btn-primary"> <span class="glyphicon-info-sign glyphicon"/></span> Szczegóły
                             </a>
                         </p>
                     </div>

@@ -13,29 +13,29 @@ import java.util.Set;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
-	@Autowired
-	private ProductRepository productRepository;
 
-	public List<Product> getAllProducts() {
-		return productRepository.getAllProducts();
-	}
+    @Autowired
+    private ProductRepository productRepository;
 
-	public Product getProductById(String productID) {
-		return productRepository.getProductById(productID);
-	}
-	
-	public List<Product> getProductsByCategory(String category) {
-		return productRepository.getProductsByCategory(category);
-	}
+    public List<Product> getAllProducts() {
+        return productRepository.getAllProducts();
+    }
 
-	public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
-		return productRepository.getProductsByFilter(filterParams);
-	}
+    public Product getProductById(String productID) {
+        return productRepository.getProductById(productID);
+    }
 
-	public void addProduct(Product product) {
-		productRepository.addProduct(product);
+    public List<Product> getProductsByCategory(String category) {
+        return productRepository.getProductsByCategory(category);
+    }
 
-	}
+    public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
+        return productRepository.getProductsByFilter(filterParams);
+    }
+
+    public void addProduct(Product product) {
+        productRepository.addProduct(product);
+
+    }
 
 }

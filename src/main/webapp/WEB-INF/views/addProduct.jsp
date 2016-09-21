@@ -28,15 +28,15 @@
                 Dodaj nowy produkt
             </legend>
             <div class="form-group">
-                <label class="conrol-label col-lg-2 col-lg-2" for ="productId"> Id produktu</label>
+                <label class="conrol-label col-lg-2 col-lg-2" for="productId"> Id produktu</label>
 
-            <div class="col-lg-10">
-                <form:input path="productId" id="productId" type="text" class="form:input-large"/>
+                <div class="col-lg-10">
+                    <form:input path="productId" id="productId" type="text" class="form:input-large"/>
 
-            </div>
+                </div>
             </div>
             <div class="form-group">
-                <label class="conrol-label col-lg-2 col-lg-2" for ="unitPrice"> Unit Price</label>
+                <label class="conrol-label col-lg-2 col-lg-2" for="unitPrice"> Unit Price</label>
 
                 <div class="col-lg-10">
                     <form:input path="unitPrice" id="unitPrice" type="text" class="form:input-large"/>
@@ -44,7 +44,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="conrol-label col-lg-2 col-lg-2" for ="manufacturer"> Manufacturer</label>
+                <label class="conrol-label col-lg-2 col-lg-2" for="manufacturer"> Manufacturer</label>
 
                 <div class="col-lg-10">
                     <form:input path="manufacturer" id="manufacturer" type="text" class="form:input-large"/>
@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="conrol-label col-lg-2 col-lg-2" for ="category"> Category</label>
+                <label class="conrol-label col-lg-2 col-lg-2" for="category"> Category</label>
 
                 <div class="col-lg-10">
                     <form:input path="category" id="category" type="text" class="form:input-large"/>
@@ -60,7 +60,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="conrol-label col-lg-2 col-lg-2" for ="UnitsInStock"> unitsInStock</label>
+                <label class="conrol-label col-lg-2 col-lg-2" for="UnitsInStock"> unitsInStock</label>
 
                 <div class="col-lg-10">
                     <form:input path="UnitsInStock" id="UnitsInStock" type="text" class="form:input-large"/>
@@ -78,7 +78,7 @@
             </div>
 
             <div class="form-group">
-                <%--@declare id="condition"--%><label class="control-label col-lg-2" for="condition"> Stan</label>
+                    <%--@declare id="condition"--%><label class="control-label col-lg-2" for="condition"> Stan</label>
                 <div class="col=lg-10">
                     <form:radiobutton path="condition" value="New"/> Nowy
                     <form:radiobutton path="condition" value="Old"/> Uzywany

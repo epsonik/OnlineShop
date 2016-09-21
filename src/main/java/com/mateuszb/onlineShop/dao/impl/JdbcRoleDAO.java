@@ -13,46 +13,47 @@ public class JdbcRoleDAO implements RoleDAO {
 
     private DataSource dataSource;
 
-    public void setDataSource(DataSource dataSource){
+    public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
-    public void insert(int userId) {
-        String sqlStatement = "INSERT INTO USER_ROLES " + "(user_id, role_id) VALUES (?, ?)";
+    public void insert(String login) {
+        String sqlStatement = "INSERT INTO USER_ROLES " + "(login, role_id) VALUES (?, ?)";
 
         Connection connection = null;
 
         try {
             connection = dataSource.getConnection();
             PreparedStatement ps = connection.prepareCall(sqlStatement);
-            ps.setInt(1,userId);
-            ps.setInt(2,1);
+            ps.setString(1, login);
+            ps.setInt(2, 1);
             ps.executeUpdate();
             ps.close();
 
-        } catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             if (connection != null) {
-                try{
+                try {
                     connection.close();
-                } catch (SQLException e) { }
+                } catch (SQLException e) {
+                }
             }
         }
     }
 
-    public int getRoleId(int userId) {
-        String sqlStatement = "SELECT * FROM USER_ROLES WHERE USER_ID = ?";
+    public int getRoleId(String login) {
+        String sqlStatement = "SELECT * FROM USER_ROLES WHERE login = ?";
 
         Connection connection = null;
 
         try {
             connection = dataSource.getConnection();
             PreparedStatement ps = connection.prepareCall(sqlStatement);
-            ps.setInt(1,userId);
+            ps.setString(1, login);
             ResultSet rs = ps.executeQuery();
 
-            if(rs.next()){
+            if (rs.next()) {
                 return rs.getInt("role_id");
             }
 
@@ -60,13 +61,14 @@ public class JdbcRoleDAO implements RoleDAO {
             ps.close();
 
             return 0;
-        } catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
             if (connection != null) {
-                try{
+                try {
                     connection.close();
-                } catch (SQLException e) { }
+                } catch (SQLException e) {
+                }
             }
         }
     }

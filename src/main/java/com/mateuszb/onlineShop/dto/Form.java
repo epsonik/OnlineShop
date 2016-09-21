@@ -13,45 +13,35 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 
 public class Form {
 
-    private int id;
-
-    @Size(min=3, max=20)
+    @Size(min = 3, max = 20)
     private String firstName;
 
-    @Size(min=3, max=20)
+    @Size(min = 3, max = 20)
     private String lastName;
 
     @Email
     private String email;
 
     @NotEmpty
-    @Size(min=5,max=20)
+    @Size(min = 5, max = 20)
     private String login;
 
     @NotEmpty
-    @Size(min=5,max=20)
+    @Size(min = 5, max = 20)
     private String password;
 
-    public Form(){};
+    public Form() {
+    }
 
-    public Form(String firstName, String lastName, String email, String login, String password){
+    ;
+
+    public Form(String firstName, String lastName, String email, String login, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.login = login;
         this.password = password;
     }
-
-    public Form(int id, String firstName, String lastName, String email, String login, String password){
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.login = login;
-        this.password = password;
-    }
-
-    public int getId(){ return id; }
 
     public String getFirstName() {
         return firstName;
@@ -94,7 +84,7 @@ public class Form {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return "Imie: " + firstName + " nazwisko: " + lastName + " email: " + email + " login: " + login + " hasło: " + password;
     }
 }

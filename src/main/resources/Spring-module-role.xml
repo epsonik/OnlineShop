@@ -3,7 +3,7 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <import resource="database/Spring-Datasource.xml" />
-    <import resource="Role/Spring-Role.xml" />
+    <import resource="Spring-Datasource.xml"/>
+    <import resource="Spring-Role.xml"/>
 
 </beans>
