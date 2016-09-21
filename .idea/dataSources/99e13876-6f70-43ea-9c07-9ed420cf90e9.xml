@@ -1,0 +1,150 @@
+<dataSource name="MySQL - @localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="world">
+      <visible>1</visible>
+    </schema>
+    <table id="2" parent="1" name="city" />
+    <table id="3" parent="1" name="country" />
+    <table id="4" parent="1" name="countrylanguage" />
+    <column id="5" parent="2" name="ID">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="6" parent="2" name="Name">
+      <mandatory>1</mandatory>
+      <data-type>char(35)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="7" parent="2" name="CountryCode">
+      <mandatory>1</mandatory>
+      <data-type>char(3)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="8" parent="2" name="District">
+      <mandatory>1</mandatory>
+      <data-type>char(20)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="9" parent="2" name="Population">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <index id="10" parent="2" name="CountryCode">
+      <columns>CountryCode</columns>
+      <desc-columns />
+    </index>
+    <key id="11" parent="2" name="PRIMARY">
+      <columns>ID</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="12" parent="2" name="city_ibfk_1">
+      <columns>CountryCode</columns>
+      <ref-key>~.country.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="13" parent="3" name="Code">
+      <mandatory>1</mandatory>
+      <data-type>char(3)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="14" parent="3" name="Name">
+      <mandatory>1</mandatory>
+      <data-type>char(52)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="15" parent="3" name="Continent">
+      <mandatory>1</mandatory>
+      <data-type>enum('Asia', 'Europe', 'North America', 'Africa', 'Oceania', 'Antarctica', 'South America')|0</data-type>
+      <default-expression>'Asia'</default-expression>
+    </column>
+    <column id="16" parent="3" name="Region">
+      <mandatory>1</mandatory>
+      <data-type>char(26)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="17" parent="3" name="SurfaceArea">
+      <mandatory>1</mandatory>
+      <data-type>float(10,2)|0</data-type>
+      <default-expression>'0.00'</default-expression>
+    </column>
+    <column id="18" parent="3" name="IndepYear">
+      <data-type>smallint(6)|0</data-type>
+    </column>
+    <column id="19" parent="3" name="Population">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <default-expression>'0'</default-expression>
+    </column>
+    <column id="20" parent="3" name="LifeExpectancy">
+      <data-type>float(3,1)|0</data-type>
+    </column>
+    <column id="21" parent="3" name="GNP">
+      <data-type>float(10,2)|0</data-type>
+    </column>
+    <column id="22" parent="3" name="GNPOld">
+      <data-type>float(10,2)|0</data-type>
+    </column>
+    <column id="23" parent="3" name="LocalName">
+      <mandatory>1</mandatory>
+      <data-type>char(45)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="24" parent="3" name="GovernmentForm">
+      <mandatory>1</mandatory>
+      <data-type>char(45)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="25" parent="3" name="HeadOfState">
+      <data-type>char(60)|0</data-type>
+    </column>
+    <column id="26" parent="3" name="Capital">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="27" parent="3" name="Code2">
+      <mandatory>1</mandatory>
+      <data-type>char(2)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <key id="28" parent="3" name="PRIMARY">
+      <columns>Code</columns>
+      <primary>1</primary>
+    </key>
+    <column id="29" parent="4" name="CountryCode">
+      <mandatory>1</mandatory>
+      <data-type>char(3)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="30" parent="4" name="Language">
+      <mandatory>1</mandatory>
+      <data-type>char(30)|0</data-type>
+      <default-expression>''</default-expression>
+    </column>
+    <column id="31" parent="4" name="IsOfficial">
+      <mandatory>1</mandatory>
+      <data-type>enum('T', 'F')|0</data-type>
+      <default-expression>'F'</default-expression>
+    </column>
+    <column id="32" parent="4" name="Percentage">
+      <mandatory>1</mandatory>
+      <data-type>float(4,1)|0</data-type>
+      <default-expression>'0.0'</default-expression>
+    </column>
+    <index id="33" parent="4" name="CountryCode">
+      <columns>CountryCode</columns>
+      <desc-columns />
+    </index>
+    <key id="34" parent="4" name="PRIMARY">
+      <columns>CountryCode
+Language</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="35" parent="4" name="countryLanguage_ibfk_1">
+      <columns>CountryCode</columns>
+      <ref-key>~.country.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+  </database-model>
+</dataSource>

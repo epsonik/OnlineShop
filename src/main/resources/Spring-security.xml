@@ -1,0 +1,29 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+    http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.1.xsd">
+
+    <http auto-config="true">
+        <intercept-url pattern="/" access="permitAll"/>
+        <intercept-url pattern="/onlineHome" access="hasRole('1')"/>
+        <intercept-url pattern="/onlineAdminHome" access="hasRole('2')"/>
+        <form-login
+                login-page="/login"
+                login-processing-url="/login"
+                authentication-failure-url="/Access_Denied"
+                username-parameter="login"
+                password-parameter="password"/>
+        <logout logout-success-url="/login?logout"/>
+        <csrf/>
+    </http>
+
+    <authentication-manager>
+        <authentication-provider>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query="SELECT login, password FROM user_table where login=?"
+                               authorities-by-username-query="SELECT login, role_id FROM user_roles where login=?"/>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>
