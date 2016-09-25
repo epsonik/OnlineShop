@@ -19,6 +19,8 @@
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/DefaultServlet-context.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/Spring-module.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/Role/Spring-Role.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/Spring-module-role.xml</file>
+          <file>file://$MODULE_DIR$/src/main/resources/Spring-module-form.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -31,7 +33,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="1.7" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Spring-4.3.1.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.2.RELEASE" level="project" />
@@ -63,5 +65,7 @@
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.2.1.Final" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.1.0" level="project" />
+    <orderEntry type="library" name="Maven: commons-fileupload:commons-fileupload:1.2.2" level="project" />
+    <orderEntry type="library" name="Maven: commons-io:commons-io:1.3.2" level="project" />
   </component>
 </module>

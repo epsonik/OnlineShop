@@ -1,5 +1,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <html>
 <head>
@@ -22,7 +23,7 @@
     </div>
 </section>
 <section class="container">
-    <form:form modelAttribute="newProduct" class="form-horizontal">
+    <form:form modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
         <fieldset>
             <legend>
                 Dodaj nowy produkt
@@ -78,11 +79,21 @@
             </div>
 
             <div class="form-group">
-                <%--@declare id="condition"--%><label class="control-label col-lg-2" for="condition"> Stan</label>
+                <label class="control-label col-lg-2" for="condition"> Stan</label>
                 <div class="col=lg-10">
                     <form:radiobutton path="condition" value="New"/> Nowy
                     <form:radiobutton path="condition" value="Old"/> Uzywany
                     <form:radiobutton path="condition" value="Refurbsihed"/> Odnowiony
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-lg-2" for="productImage">
+                    <spring:message
+                        code="addProdcut.form.productImage.label" />
+                </label>
+                <div class="col-lg-10">
+                    <form:input id="productImage" path="productImage" type="file"
+                                class="form:input-large" />
                 </div>
             </div>
             <div class="form-group">
