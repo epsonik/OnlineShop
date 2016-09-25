@@ -1,5 +1,6 @@
 package com.mateuszb.onlineShop.controller;
 
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -9,13 +10,17 @@ import com.sun.xml.internal.ws.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.WebDataBinderFactory;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.mateuszb.onlineShop.service.ProductService;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/products")
@@ -63,17 +68,31 @@ public class ProductController {
 		return "addProduct";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct, BindingResult result){
-		productService.addProduct(newProduct);
-		String[] suppressedFields =result.getSuppressedFields();
-		if(suppressedFields.length>0){
-			throw new RuntimeException("Proba wiązania niedozwolonych pol:" );
+	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
+		String[] suppressedFields = result.getSuppressedFields();
+
+		if (suppressedFields.length > 0) {
+			throw new RuntimeException("Pr�ba wi�zania niedozwolonych p�l: " + org.springframework.util.StringUtils.arrayToCommaDelimitedString(suppressedFields));
 		}
+
+		MultipartFile productImage = productToBeAdded.getProductImage();
+		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+
+		if (productImage!=null && !productImage.isEmpty()) {
+			try {
+				productImage.transferTo(new File(rootDirectory+"resources\\images\\"+productToBeAdded.getProductId() + ".png"));
+			} catch (Exception e) {
+				throw new RuntimeException("Pr�ba zapisu obrazka zako�czona niepowodzeniem", e);
+			}
+		}
+
+
+		productService.addProduct(productToBeAdded);
 		return "redirect:/products";
 	}
 	@InitBinder
-	public void initialiseBinder(WebDataBinder binder){
-		binder.setDisallowedFields("unitsInOrder", "discontinued");
+	public void initialiseBinder(WebDataBinder binder) {
+		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition","productImage");
 	}
 }
 

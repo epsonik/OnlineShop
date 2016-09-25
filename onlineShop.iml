@@ -19,11 +19,6 @@
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/DefaultServlet-context.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/Spring-module.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/Role/Spring-Role.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/database/Spring-Datasource.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Form/Spring-Form.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Spring-module-form.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Spring-module-role.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/rootApplicationContext.xml</file>
         </fileset>
       </configuration>
     </facet>
@@ -68,9 +63,5 @@
     <orderEntry type="library" name="Maven: javax.validation:validation-api:1.1.0.Final" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.2.1.Final" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml:classmate:1.1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:4.1.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:4.1.3.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:4.1.3.RELEASE" level="project" />
   </component>
 </module>

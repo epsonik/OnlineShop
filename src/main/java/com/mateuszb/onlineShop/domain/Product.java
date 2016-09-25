@@ -1,9 +1,12 @@
 package com.mateuszb.onlineShop.domain;
 
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.xml.bind.annotation.XmlTransient;
 import java.math.BigDecimal;
 
 public class Product {
-
+	private MultipartFile productImage;
 	private String productId;
 	private String name;
 	private BigDecimal unitPrice;
@@ -51,6 +54,10 @@ public class Product {
 
 	public String getDescription() {
 		return description;
+	}
+	@XmlTransient
+	public MultipartFile getProductImage() {
+		return productImage;
 	}
 
 	public void setDescription(String description) {
