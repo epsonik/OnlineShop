@@ -72,7 +72,7 @@ public class ProductController {
 		String[] suppressedFields = result.getSuppressedFields();
 
 		if (suppressedFields.length > 0) {
-			throw new RuntimeException("Prba wi�zania niedozwolonych p�l: " + org.springframework.util.StringUtils.arrayToCommaDelimitedString(suppressedFields));
+			throw new RuntimeException("Pr�ba wi�zania niedozwolonych p�l: " + org.springframework.util.StringUtils.arrayToCommaDelimitedString(suppressedFields));
 		}
 
 		MultipartFile productImage = productToBeAdded.getProductImage();
@@ -91,8 +91,8 @@ public class ProductController {
 		return "redirect:/products";
 	}
 	@InitBinder
-	public void initialiseBinder(WebDataBinder binder){
-		binder.setDisallowedFields("productId", "name", "unitPrice", "description", "manufacturer", "category", "unitsInStock", "productImage", "unitsInOrder", "discontinued");
+	public void initialiseBinder(WebDataBinder binder) {
+		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition","productImage");
 	}
 }
 
