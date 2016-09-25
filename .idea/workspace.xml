@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="81068ecf-41d9-4a25-b14c-6c56baf22489" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
     </list>
     <ignored path="untitled8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -1188,7 +1187,7 @@
       <workItem from="1474051480520" duration="8464000" />
       <workItem from="1474154177850" duration="10795000" />
       <workItem from="1474486626554" duration="3036000" />
-      <workItem from="1474715984481" duration="25439000" />
+      <workItem from="1474715984481" duration="25469000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1473030307856</created>
@@ -1253,11 +1252,18 @@
       <option name="project" value="LOCAL" />
       <updated>1474840929915</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="porawka strony domowej&#10;">
+      <created>1474842040874</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1474842040874</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82270000" />
+    <option name="totallyTimeSpent" value="82300000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="764" width="1280" height="1028" extended-state="6" />
@@ -1366,7 +1372,8 @@
     <MESSAGE value="dodawanie nowego towaru z poziomu usera2" />
     <MESSAGE value="obrazki do produktow, mozliwosc wrzucenia foty podczas dodawania nowego produktu&#10;" />
     <MESSAGE value="obrazki commit 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="obrazki commit 2" />
+    <MESSAGE value="porawka strony domowej&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="porawka strony domowej&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
