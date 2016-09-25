@@ -884,7 +884,7 @@
       <workItem from="1474051480520" duration="8464000" />
       <workItem from="1474154177850" duration="10795000" />
       <workItem from="1474486626554" duration="3036000" />
-      <workItem from="1474715984481" duration="19365000" />
+      <workItem from="1474715984481" duration="19442000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1473030307856</created>
@@ -928,11 +928,18 @@
       <option name="project" value="LOCAL" />
       <updated>1474822911312</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="obrazki do produktow, mozliwosc wrzucenia foty podczas dodawania nowego produktu&#10;">
+      <created>1474823088826</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1474823088826</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76196000" />
+    <option name="totallyTimeSpent" value="76273000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="764" width="1280" height="1028" extended-state="6" />
