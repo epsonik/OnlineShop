@@ -37,7 +37,13 @@
                 <li class="active"><a href='<spring:url value="/onlineAdminHome"/>'>Strona główna</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href='<spring:url value="/"/>'>Wyloguj</a></li>
+                <li>Witaj: <strong>${user}</strong></li>
+                <li>
+                    <form action="${pageContext.request.contextPath}/logout" method="post">
+                        <input type="submit" value="Wyloguj sie"/>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

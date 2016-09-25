@@ -1,7 +1,7 @@
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
@@ -35,31 +35,40 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href='<spring:url value="/"/>'>Strona główna</a></li>
-                <li><a href='<spring:url value="/logowanie"/>'>Logowanie</a></li>
-                <li><a href='<spring:url value="/rejestracja"/>'>Rejestracja</a></li>
+                <li><a href='<spring:url value="/login"/>'>Logowanie</a></li>
+                <li><a href='<spring:url value="/registration"/>'>Rejestracja</a></li>
             </ul>
         </div>
     </div>
 </nav>
 
-<section>
+<section class="container">
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj w sklepie internetowym! </h1>
-            <p> Wyjatkowym i jedynym sklepie internetowym </p>
-            <h2>Formularz logowania</h2>
-            <br>
-            <form:form action="${pageContext.request.contextPath}/logowanie" modelAttribute="Form" method="post"> 
-                Login: 
-                <form:input path="login" id="login"/> 
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="login"></form:errors></c:if> 
-                <br> 
-                Hasło: 
-                <form:input path="password" id="password" type="password"/>
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="password"></form:errors></c:if> 
-                <br>
-                <input type="submit" value="Zaloguj!"/>
-            </form:form>
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Zaloguj się</h3>
+                </div>
+                <div class="panel-body">
+                    <c:if test="${not empty error}">
+                        <div class="alert alert-danger">
+                            <spring:message text="Niepoprawna nazwa uzytkownika lub haslo"/><br/>
+                        </div>
+                    </c:if>
+                    <form action="<c:url value="/j_spring_security_check"></c:url>" method="post">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Nazwa uzytkownika" name='j_username' type="text">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Haslo" name='j_password' type="password" value="">
+                            </div>
+                            <input class="btn btn-lg btn-success btn-block" type="submit" value="Zaloguj sie">
+                            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 </section>

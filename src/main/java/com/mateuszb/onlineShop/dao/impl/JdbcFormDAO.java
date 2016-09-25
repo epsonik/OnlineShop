@@ -3,7 +3,7 @@ package com.mateuszb.onlineShop.dao.impl;
 
 import com.mateuszb.onlineShop.dao.FormDAO;
 import com.mateuszb.onlineShop.dto.Form;
-
+import org.springframework.security.crypto.password.PasswordEncoder;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,6 +13,7 @@ import java.sql.SQLException;
 public class JdbcFormDAO implements FormDAO {
 
     private DataSource dataSource;
+    private PasswordEncoder passwordEncoder;
 
     public void setDataSource(DataSource dataSource){
         this.dataSource = dataSource;

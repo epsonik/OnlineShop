@@ -16,12 +16,12 @@ import javax.validation.Valid;
 @Controller
 public class RegistrationController {
 
-    @RequestMapping(value="/rejestracja", method=RequestMethod.GET)
+    @RequestMapping(value= "/registration", method=RequestMethod.GET)
     public String form(){
         return "registrationForm";
     }
 
-    @RequestMapping(value="/rejestracja", method=RequestMethod.POST)
+    @RequestMapping(value="/registration", method=RequestMethod.POST)
     public String handleTheForm(@ModelAttribute("Form") @Valid Form form, BindingResult result){
         if(result.hasErrors()){
             return "registrationForm";

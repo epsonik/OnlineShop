@@ -7,10 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
-
-import java.util.List;
-import java.util.Map;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Controller
 public class OnlineAdminHomeController {
@@ -22,6 +20,7 @@ public class OnlineAdminHomeController {
     public String getAddNewProductForm(Model model){
         Product newProduct = new Product();
         model.addAttribute("newProduct", newProduct);
+        model.addAttribute("user", getPrincipal());
         return "onlineAdminHome";
     }
     @RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -34,4 +33,14 @@ public class OnlineAdminHomeController {
         return "redirect:/onlineAdminHome";
     }
 
+    private String getPrincipal() {
+        String userName = null;
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            userName = ((UserDetails) principal).getUsername();
+        } else {
+            userName = principal.toString();
+        }
+        return userName;
+    }
 }

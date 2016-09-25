@@ -36,7 +36,12 @@
                 <li class="active"><a href='<spring:url value="/onlineHome"/>'>Strona główna</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href='<spring:url value="/"/>'>Wyloguj</a></li>
+                <li>
+                    <form action="${pageContext.request.contextPath}/logout" method="post">
+                        <input type="submit" value="Wyloguj sie"/>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>
@@ -45,7 +50,7 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj zalogowany użytkowniku! </h1><br>
+            <br><h1> Witaj ${user}! </h1><br>
             <h2>Produkty</h2>
             <p>Wszystkie produkty dostępne w naszym sklepie</p>
         </div>

@@ -34,8 +34,8 @@
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href='<spring:url value="/"/>'>Strona główna</a></li>
-                <li><a href='<spring:url value="/logowanie"/>'>Logowanie</a></li>
-                <li><a href='<spring:url value="/rejestracja"/>'>Rejestracja</a></li>
+                <li><a href='<spring:url value="/login"/>'>Logowanie</a></li>
+                <li><a href='<spring:url value="/registration"/>'>Rejestracja</a></li>
             </ul>
         </div>
     </div>

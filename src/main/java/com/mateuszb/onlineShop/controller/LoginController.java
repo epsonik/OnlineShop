@@ -1,51 +1,56 @@
 package com.mateuszb.onlineShop.controller;
 
-import com.mateuszb.onlineShop.dao.FormDAO;
-import com.mateuszb.onlineShop.dao.RoleDAO;
-import com.mateuszb.onlineShop.dto.Form;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import javax.validation.Valid;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 @Controller
-public class LoginController {
+public class LoginController implements AuthenticationSuccessHandler, AuthenticationFailureHandler {
 
-    @RequestMapping(value="/logowanie", method= RequestMethod.GET)
+    @RequestMapping(value="/login", method = RequestMethod.GET)
     public String login(){
         return "login";
     }
 
-    @RequestMapping(value="/logowanie", method=RequestMethod.POST)
-    public String handleTheLogin(@ModelAttribute("Form") @Valid Form form, BindingResult result){
-        if(result.hasErrors()){
-            return "login";
-        } else {
-            ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-form.xml");
-            FormDAO formDAO = (FormDAO) context.getBean("formDAO");
-            Form form1 =  formDAO.findByLogin(form.getLogin());
-
-            ApplicationContext context1 = new ClassPathXmlApplicationContext("/Spring-module-role.xml");
-            RoleDAO roleDAO = (RoleDAO) context1.getBean("roleDAO");
-
-            if( form1.getPassword().equals(form.getPassword()) ){
-                if(roleDAO.getRoleId(form1.getId()) == 1){
-                    return "redirect:/onlineHome";
-                } else {
-                    return "redirect:/onlineAdminHome";
-                }
-            } else {
-                return "login";
-            }
-        }
+    @RequestMapping(value = "/loginfailed", method = RequestMethod.GET)
+    public String loginerror(Model model) {
+        model.addAttribute("error", "true");
+        return "login";
     }
 
-    @ModelAttribute("Form")
-    public Form getFormularz(){
-        return new Form();
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String logout(Model model) {
+        return "login";
+    }
+
+    public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
+                                        Authentication authentication) throws IOException, ServletException {
+
+        String role = authentication.getAuthorities().toString();
+        String targetUrl = "";
+        if(role.contains("2")){
+            targetUrl = "onlineAdminHome";
+        } else if (role.contains("1")) {
+            targetUrl = "onlineHome";
+        } else {
+            System.out.println("jestem tutaj i oznajmiam, że sie coś spieprzyło z uprawnieniami");
+        }
+
+        httpServletResponse.sendRedirect(targetUrl);
+    }
+
+    public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
+        System.out.println("Błąd: " + e.getMessage());
+        httpServletResponse.sendRedirect("loginfailed");
     }
 }
