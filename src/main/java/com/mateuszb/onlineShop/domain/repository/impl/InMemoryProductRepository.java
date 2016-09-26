@@ -34,9 +34,9 @@ public class InMemoryProductRepository implements ProductRepository {
 
 		String sqlStatement = "SELECT a.id AS id, a.name AS name, a.unitPrice AS unitPrice, " +
 				"a.description AS description, a.unitsInStock AS unitsInStock," +
-				"b.name AS category, c.name AS manufacture FROM PRODUCT a " +
-				"JOIN PRODUCT_CATEGORIES b ON a.category_id = b.id " +
-				"JOIN PRODUCT_MANUFACTURES c on a.manufacturer_id = c.id";
+				"b.name AS category, c.name AS manufacture FROM PRODUCT A " +
+				"JOIN PRODUCT_CATEGORIES B ON a.category_id = b.id " +
+				"JOIN PRODUCT_MANUFACTURES C on a.manufacturer_id = c.id";
 
 		Connection connection = null;
 

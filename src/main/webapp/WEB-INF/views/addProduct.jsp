@@ -49,7 +49,7 @@
     </div>
 </section>
 <section class="container">
-    <form modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
+    <form:form modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
         <fieldset>
             <legend>Dodaj nowy produkt</legend>
             <div class="form-group">
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </fieldset>
-    </form>
+    </form:form>
 </section>
 </body>
 </html>
