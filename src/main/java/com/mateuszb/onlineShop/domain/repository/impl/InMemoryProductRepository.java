@@ -32,11 +32,11 @@ public class InMemoryProductRepository implements ProductRepository {
 	public List<Product> getAllProducts() {
 		Product productById = null;
 
-		String sqlStatement = "SELECT a.id AS id, a.name AS name, a.unitPrice AS unitPrice, " +
-				"a.description AS description, a.unitsInStock AS unitsInStock," +
-				"b.name AS category, c.name AS manufacture FROM PRODUCT A " +
-				"JOIN PRODUCT_CATEGORIES B ON a.category_id = b.id " +
-				"JOIN PRODUCT_MANUFACTURES C on a.manufacturer_id = c.id";
+		String sqlStatement = "SELECT A.ID AS id, A.NAME AS name, A.UNITPRICE AS unitPrice, " +
+				"A.DESCRIPTION AS description, A.UNITSINSTOCK AS unitsInStock," +
+				"B.NAME AS category, C.NAME AS manufacture FROM PRODUCT A " +
+				"JOIN PRODUCT_CATEGORIES B ON A.CATEGORY_ID = B.ID " +
+				"JOIN PRODUCT_MANUFACTURES C on A.MANUFACTURER_ID = C.ID";
 
 		Connection connection = null;
 
@@ -73,11 +73,12 @@ public class InMemoryProductRepository implements ProductRepository {
 
 	public Product getProductById(String productId) {
 		Product productById = null;
-		String sqlStatement = "SELECT a.id AS id, a.name AS name, a.unitPrice AS unitPrice, " +
-				"a.description AS description, a.unitsInStock AS unitsInStock," +
-				"b.name AS category, c.name AS manufacture FROM PRODUCT a " +
-				"JOIN PRODUCT_CATEGORIES b ON a.category_id = b.id " +
-				"JOIN PRODUCT_MANUFACTURES c on a.manufacturer_id = c.id WHERE a.ID = ?";
+
+		String sqlStatement = "SELECT A.ID AS id, A.NAME AS name, A.UNITPRICE AS unitPrice, " +
+				"A.DESCRIPTION AS description, A.UNITSINSTOCK AS unitsInStock," +
+				"B.NAME AS category, C.NAME AS manufacture FROM PRODUCT A " +
+				"JOIN PRODUCT_CATEGORIES B ON A.CATEGORY_ID = B.ID " +
+				"JOIN PRODUCT_MANUFACTURES C on A.MANUFACTURER_ID = C.ID WHERE A.ID=?";
 
 		Connection connection = null;
 
