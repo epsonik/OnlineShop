@@ -8,6 +8,8 @@ import com.mateuszb.onlineShop.domain.Product;
 import com.sun.xml.internal.org.jvnet.staxex.NamespaceContextEx;
 import com.sun.xml.internal.ws.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -65,6 +67,7 @@ public class ProductController {
 	public String getAddNewProductForm(Model model){
 		Product newProduct = new Product();
 		model.addAttribute("newProduct", newProduct);
+		model.addAttribute("user", getPrincipal());
 		return "addProduct";
 	}
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
@@ -90,9 +93,21 @@ public class ProductController {
 		productService.addProduct(productToBeAdded);
 		return "redirect:/products";
 	}
+
 	@InitBinder
 	public void initialiseBinder(WebDataBinder binder) {
 		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition","productImage");
+	}
+
+	private String getPrincipal() {
+		String userName = null;
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			userName = ((UserDetails) principal).getUsername();
+		} else {
+			userName = principal.toString();
+		}
+		return userName;
 	}
 }
 

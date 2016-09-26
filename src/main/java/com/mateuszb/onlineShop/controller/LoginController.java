@@ -39,7 +39,7 @@ public class LoginController implements AuthenticationSuccessHandler, Authentica
         String role = authentication.getAuthorities().toString();
         String targetUrl = "";
         if(role.contains("2")){
-            targetUrl = "onlineAdminHome";
+            targetUrl = "products/add";
         } else if (role.contains("1")) {
             targetUrl = "onlineHome";
         } else {

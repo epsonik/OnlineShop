@@ -5,13 +5,13 @@
          version="3.1">
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB/INF/spring/webcontext/security-context.xml</param-value>
+        <param-value>src/main/webapp/WEB-INF/spring/webcontext/security-context.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <filter>
-        <filter-name>sprinfSecurityFilterChain</filter-name>
+        <filter-name>sprinfSecurityFilterChain</filter-name>ss
         <filter-class>
             org.springframework.web.filter.DelegatingFilterProxy
         </filter-class>

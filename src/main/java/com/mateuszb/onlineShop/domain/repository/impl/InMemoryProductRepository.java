@@ -1,6 +1,10 @@
 package com.mateuszb.onlineShop.domain.repository.impl;
 
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -11,48 +15,95 @@ import com.mateuszb.onlineShop.domain.Product;
 import com.mateuszb.onlineShop.domain.repository.ProductRepository;
 import org.springframework.stereotype.Repository;
 
+import javax.sql.DataSource;
+
 
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
-	private List<Product> listOfProducts = new ArrayList<Product>();
+	private DataSource dataSource;
 
-	public InMemoryProductRepository() {
-		Product iphone = new Product("P1234","iPhone 5s", new BigDecimal(500));
-		iphone.setDescription("Apple iPhone 5s, smartfon z 4-calowym ekranem o rozdzielczo�ci 640�1136 i 8-megapikselowym aparatem");
-		iphone.setCategory("smartfon");
-		iphone.setManufacturer("Apple");
-		iphone.setUnitsInStock(1000);
-
-		Product laptop_dell = new Product("P1235","Dell Inspiron", new BigDecimal(700));
-		laptop_dell.setDescription("Dell Inspiron, 14-calowy laptop (czarny) z procesorami Intel Core 3. generacji");
-		laptop_dell.setCategory("laptop");
-		laptop_dell.setManufacturer("Dell");
-		laptop_dell.setUnitsInStock(1000);
-
-		Product tablet_Nexus = new Product("P1236","Nexus 7", new BigDecimal(300));
-		tablet_Nexus.setDescription("Google Nexus 7 jest najl�ejszym 7-calowym tabletem z 4-rdzeniowym procesorem Qualcomm Snapdragon� S4 Pro");
-		tablet_Nexus.setCategory("tablet");
-		tablet_Nexus.setManufacturer("Google");
-		tablet_Nexus.setUnitsInStock(1000);
-
-		listOfProducts.add(iphone);
-		listOfProducts.add(laptop_dell);
-		listOfProducts.add(tablet_Nexus);
-
+	public void setDataSource(DataSource dataSource){
+		this.dataSource = dataSource;
 	}
 
+	private List<Product> listOfProducts = new ArrayList<Product>();
+
 	public List<Product> getAllProducts() {
+		Product productById = null;
+
+		String sqlStatement = "SELECT a.id AS id, a.name AS name, a.unitPrice AS unitPrice, " +
+				"a.description AS description, a.unitsInStock AS unitsInStock," +
+				"b.name AS category, c.name AS manufacture FROM PRODUCT a " +
+				"JOIN PRODUCT_CATEGORIES b ON a.category_id = b.id " +
+				"JOIN PRODUCT_MANUFACTURES c on a.manufacturer_id = c.id";
+
+		Connection connection = null;
+
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+			ResultSet rs = ps.executeQuery();
+
+			while(rs.next()){
+				productById = new Product(Integer.toString(rs.getInt("id")), rs.getString("name"), rs.getBigDecimal("unitPrice"));
+				productById.setDescription(rs.getString("description"));
+				productById.setCategory(rs.getString("category"));
+				productById.setManufacturer(rs.getString("manufacture"));
+				productById.setUnitsInStock(rs.getLong("unitsInStock"));
+				if (!listOfProducts.contains(productById)){
+					listOfProducts.add(productById);
+				}
+			}
+
+			rs.close();
+			ps.close();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
+			}
+		}
+
 		return listOfProducts;
 	}
 
 	public Product getProductById(String productId) {
 		Product productById = null;
+		String sqlStatement = "SELECT a.id AS id, a.name AS name, a.unitPrice AS unitPrice, " +
+				"a.description AS description, a.unitsInStock AS unitsInStock," +
+				"b.name AS category, c.name AS manufacture FROM PRODUCT a " +
+				"JOIN PRODUCT_CATEGORIES b ON a.category_id = b.id " +
+				"JOIN PRODUCT_MANUFACTURES c on a.manufacturer_id = c.id WHERE a.ID = ?";
 
-		for(Product product : listOfProducts) {
-			if(product!=null && product.getProductId()!=null && product.getProductId().equals(productId)){
-				productById = product;
-				break;
+		Connection connection = null;
+
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+			ps.setInt(1, Integer.parseInt(productId));
+			ResultSet rs = ps.executeQuery();
+
+			if(rs.next()){
+				productById = new Product(Integer.toString(rs.getInt("id")), rs.getString("name"), rs.getBigDecimal("unitPrice"));
+				productById.setDescription(rs.getString("description"));
+				productById.setCategory(rs.getString("category"));
+				productById.setManufacturer(rs.getString("manufacture"));
+				productById.setUnitsInStock(rs.getLong("unitsInStock"));
+			}
+
+			rs.close();
+			ps.close();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
 			}
 		}
 
@@ -65,6 +116,8 @@ public class InMemoryProductRepository implements ProductRepository {
 
 	public List<Product> getProductsByCategory(String category) {
 		List<Product> productsByCategory = new ArrayList<Product>();
+
+		listOfProducts = getAllProducts();
 
 		for(Product product: listOfProducts) {
 			if(category.equalsIgnoreCase(product.getCategory())){
@@ -80,6 +133,8 @@ public class InMemoryProductRepository implements ProductRepository {
 		Set<Product> productsByCategory = new HashSet<Product>();
 
 		Set<String> criterias = filterParams.keySet();
+
+		listOfProducts = getAllProducts();
 
 		if(criterias.contains("brand")) {
 			for(String brandName: filterParams.get("brand")) {
@@ -101,7 +156,11 @@ public class InMemoryProductRepository implements ProductRepository {
 
 		return productsByCategory;
 	}
+
 	public void addProduct(Product product) {
-		listOfProducts.add(product);
+		System.out.println("ProductID: " + product.getProductId() + ". Nazwa:" + product.getName() + ". Cena: " +
+			product.getUnitPrice() + ". Opis: " + product.getDescription() + ". Producent: " + product.getManufacturer() +
+				". Kategoria: " + product.getCategory() + ". UnitsInStock: " + product.getUnitsInStock() + ". Cindition: " +
+					product.getCondition() + ". ");
 	}
 }

@@ -5,6 +5,9 @@ import com.mateuszb.onlineShop.domain.repository.ProductRepository;
 import com.mateuszb.onlineShop.service.ProductService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,9 +16,13 @@ import java.util.Set;
 
 @Service
 public class ProductServiceImpl implements ProductService {
-	
-	@Autowired
-	private ProductRepository productRepository;
+
+	private ProductRepository productRepository = null;
+
+	public ProductServiceImpl(){
+		ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-product.xml");
+		productRepository = (ProductRepository) context.getBean("productDAO");
+	}
 
 	public List<Product> getAllProducts() {
 		return productRepository.getAllProducts();
@@ -35,7 +42,6 @@ public class ProductServiceImpl implements ProductService {
 
 	public void addProduct(Product product) {
 		productRepository.addProduct(product);
-
 	}
 
 }

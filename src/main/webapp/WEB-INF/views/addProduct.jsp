@@ -10,34 +10,60 @@
     <title>Produkty</title>
 </head>
 <body>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='<spring:url value="/products/add"/>'>Mati Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href='<spring:url value="/products/add"/>'>Strona główna</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>Witaj: <strong>${user}</strong></li>
+                <li>
+                    <form action="${pageContext.request.contextPath}/logout" method="post">
+                        <input type="submit" value="Wyloguj sie"/>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
 <section>
     <div class="jumbotron">
         <div class="container">
-            <h1>Produkty</h1>
-            <p>Dodaj produkty</p>
+            <br><h1> Witaj Administratorze! </h1>
+            <br><h3>Dodaj produkt</h3>
         </div>
-        <a href="<c:url value="/j_spring_security_logout" />" class="btn btn-danger btn-mini pull-right">wyloguj</a>
     </div>
 </section>
 <section class="container">
-    <form:form  modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
+    <form modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
         <fieldset>
             <legend>Dodaj nowy produkt</legend>
-
             <div class="form-group">
                 <label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message code="addProdcut.form.productId.label"/></label>
                 <div class="col-lg-10">
                     <form:input id="productId" path="productId" type="text" class="form:input-large"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="name">Nazwa</label>
                 <div class="col-lg-10">
                     <form:input id="name" path="name" type="text" class="form:input-large"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="unitPrice">Cena</label>
                 <div class="col-lg-10">
@@ -46,44 +72,38 @@
                     </div>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="description">Opis</label>
                 <div class="col-lg-10">
                     <form:textarea id="description" path="description" rows = "2"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="manufacturer">Producent</label>
                 <div class="col-lg-10">
                     <form:input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="category">Kategoria</label>
                 <div class="col-lg-10">
                     <form:input id="category" path="category" type="text" class="form:input-large"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="unitsInStock">Liczba sztuk w magazynie </label>
                 <div class="col-lg-10">
                     <form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="condition">Stan</label>
                 <div class="col-lg-10">
-                    <form:radiobutton path="condition" value="New" />Nowy
-                    <form:radiobutton path="condition" value="Old" />Używany
-                    <form:radiobutton path="condition" value="Refurbished" />Odnowiony
+                    <form:radiobutton path="condition" value="New" /> Nowy
+                    <form:radiobutton path="condition" value="Old" /> Używany
+                    <form:radiobutton path="condition" value="Refurbished" /> Odnowiony
                 </div>
             </div>
-
             <div class="form-group">
                 <label class="control-label col-lg-2" for="productImage"`> <spring:message
                         code="addProdcut.form.productImage.label" />
@@ -93,16 +113,14 @@
                                 class="form:input-large" />
                 </div>
             </div>
-
-
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
                     <input type="submit" id="btnAdd" class="btn btn-primary" value ="Dodaj"/>
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </div>
             </div>
-
         </fieldset>
-    </form:form>
+    </form>
 </section>
 </body>
 </html>

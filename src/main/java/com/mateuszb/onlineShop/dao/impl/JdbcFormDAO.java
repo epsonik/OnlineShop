@@ -70,6 +70,7 @@ public class JdbcFormDAO implements FormDAO {
 
             return form;
         } catch (SQLException e){
+            System.out.println(e.getMessage());
             throw new RuntimeException(e);
         } finally {
             if (connection != null) {

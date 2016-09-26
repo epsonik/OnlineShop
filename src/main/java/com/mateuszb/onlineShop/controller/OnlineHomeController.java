@@ -2,6 +2,8 @@ package com.mateuszb.onlineShop.controller;
 
 import com.mateuszb.onlineShop.domain.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
@@ -11,11 +13,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class OnlineHomeController {
 
-    private final ProductRepository productRepository;
+    private ProductRepository productRepository = null;
 
-    @Autowired
-    public OnlineHomeController(ProductRepository productRepository) {
-        this.productRepository = productRepository;
+    public OnlineHomeController(){
+        ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-product.xml");
+        productRepository = (ProductRepository) context.getBean("productDAO");
     }
 
     @RequestMapping(value="/onlineHome")
