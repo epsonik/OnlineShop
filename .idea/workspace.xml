@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="81068ecf-41d9-4a25-b14c-6c56baf22489" name="Default" comment="Poprawki">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/dao/impl/JdbcFormDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/dao/impl/JdbcFormDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp" />
     </list>
     <ignored path="untitled8.iws" />
@@ -26,13 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InMemoryProductRepository.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="InMemoryProductRepository.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+            <state relative-caret-position="404">
+              <caret line="161" column="113" selection-start-line="161" selection-start-column="113" selection-end-line="161" selection-end-column="113" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="method#getAllProducts#0;class#InMemoryProductRepository#0" expanded="false" />
+                <element signature="method#getProductById#0;class#InMemoryProductRepository#0" expanded="false" />
                 <element signature="method#getProductsByCategory#0;class#InMemoryProductRepository#0" expanded="false" />
                 <element signature="method#getProductsByFilter#0;class#InMemoryProductRepository#0" expanded="false" />
                 <element signature="e#4004#4013#0" expanded="true" />
@@ -48,33 +50,23 @@
       <file leaf-file-name="addProduct.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="959">
-              <caret line="75" column="84" selection-start-line="75" selection-start-column="84" selection-end-line="75" selection-end-column="84" />
+            <state relative-caret-position="314">
+              <caret line="32" column="91" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="91" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="registrationForm.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registrationForm.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-630">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JdbcFormDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="JdbcFormDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/dao/impl/JdbcFormDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-75">
-              <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+            <state relative-caret-position="315">
+              <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1474888144000" expanded="true" signature="643:739" ph="INSERT INTO USER_TABLE... " />
-                <marker date="1474888144000" expanded="true" signature="1558:1595" ph="SELECT * FRO... USER_TABLE" />
-                <marker date="1474888144000" expanded="true" signature="2594:2634" ph="SELECT * FRO... USER_TABLE" />
+                <marker date="1474927171000" expanded="true" signature="643:739" ph="INSERT INTO USER_TABLE... " />
+                <marker date="1474927171000" expanded="true" signature="1558:1595" ph="SELECT * FRO... USER_TABLE" />
+                <marker date="1474927171000" expanded="true" signature="2594:2634" ph="SELECT * FRO... USER_TABLE" />
               </folding>
             </state>
           </provider>
@@ -83,8 +75,8 @@
       <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="59">
-              <caret line="72" column="64" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
+            <state relative-caret-position="554">
+              <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,7 +118,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/ProductRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Spring-module-product.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/dao/impl/JdbcFormDAO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/Product/Spring-Product.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/service/impl/OrderServiceImpl.java" />
@@ -138,6 +129,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/service/impl/ProductServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/dao/impl/JdbcFormDAO.java" />
       </list>
     </option>
   </component>
@@ -1378,7 +1370,7 @@
       <workItem from="1474873645665" duration="456000" />
       <workItem from="1474874121069" duration="2074000" />
       <workItem from="1474876266740" duration="63000" />
-      <workItem from="1474876333795" duration="23758000" />
+      <workItem from="1474876333795" duration="24787000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1473030307856</created>
@@ -1422,15 +1414,22 @@
       <option name="project" value="LOCAL" />
       <updated>1474923049345</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Poprawki">
+      <created>1474923964634</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1474923964634</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53622000" />
+    <option name="totallyTimeSpent" value="54651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="805" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31113538" sideWeight="0.50364584" order="7" side_tool="true" content_ui="tabs" />
@@ -1444,11 +1443,11 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3993808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3084239" sideWeight="0.49635416" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3084239" sideWeight="0.49635416" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3396739" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3396739" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45960698" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1495,6 +1494,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="false" />
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <MESSAGE value="first" />
     <MESSAGE value="przyciski do szczegolowych danych o produkcie, brak mapowan do przyciskow" />
@@ -1779,14 +1779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/RegistrationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1876,47 +1868,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="72" column="64" selection-start-line="72" selection-start-column="64" selection-end-line="72" selection-end-column="64" />
+        <state relative-caret-position="554">
+          <caret line="90" column="0" selection-start-line="90" selection-start-column="0" selection-end-line="90" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="959">
-          <caret line="75" column="84" selection-start-line="75" selection-start-column="84" selection-end-line="75" selection-end-column="84" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registrationForm.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-630">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/dao/impl/JdbcFormDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="14" column="34" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1474888144000" expanded="true" signature="643:739" ph="INSERT INTO USER_TABLE... " />
-            <marker date="1474888144000" expanded="true" signature="1558:1595" ph="SELECT * FRO... USER_TABLE" />
-            <marker date="1474888144000" expanded="true" signature="2594:2634" ph="SELECT * FRO... USER_TABLE" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        <state relative-caret-position="404">
+          <caret line="161" column="113" selection-start-line="161" selection-start-column="113" selection-end-line="161" selection-end-column="113" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getAllProducts#0;class#InMemoryProductRepository#0" expanded="false" />
+            <element signature="method#getProductById#0;class#InMemoryProductRepository#0" expanded="false" />
             <element signature="method#getProductsByCategory#0;class#InMemoryProductRepository#0" expanded="false" />
             <element signature="method#getProductsByFilter#0;class#InMemoryProductRepository#0" expanded="false" />
             <element signature="e#4004#4013#0" expanded="true" />
@@ -1924,6 +1889,43 @@
             <marker date="1474923863000" expanded="true" signature="892:1212" ph="SELECT A.ID PRODUCT" />
             <marker date="1474923863000" expanded="true" signature="2228:2548" ph="SELECT FROM PRODUCT" />
             <marker date="1474923863000" expanded="true" signature="2228:2561" ph="SELECT A.ID PRODUCT" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registrationForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="51" column="60" selection-start-line="51" selection-start-column="60" selection-end-line="51" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/RegistrationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="44" column="1" selection-start-line="44" selection-start-column="1" selection-end-line="44" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="32" column="91" selection-start-line="32" selection-start-column="91" selection-end-line="32" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/dao/impl/JdbcFormDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="103" selection-start-line="23" selection-start-column="103" selection-end-line="23" selection-end-column="103" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1474927171000" expanded="true" signature="643:739" ph="INSERT INTO USER_TABLE... " />
+            <marker date="1474927171000" expanded="true" signature="1558:1595" ph="SELECT * FRO... USER_TABLE" />
+            <marker date="1474927171000" expanded="true" signature="2594:2634" ph="SELECT * FRO... USER_TABLE" />
           </folding>
         </state>
       </provider>
