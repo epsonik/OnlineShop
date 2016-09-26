@@ -49,59 +49,59 @@
     </div>
 </section>
 <section class="container">
-    <form:form modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
+    <form action="${pageContext.request.contextPath}/products/add" modelAttribute="newProduct" method="post"  class="form-horizontal">
         <fieldset>
             <legend>Dodaj nowy produkt</legend>
             <div class="form-group">
                 <label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message code="addProdcut.form.productId.label"/></label>
                 <div class="col-lg-10">
-                    <form:input id="productId" path="productId" type="text" class="form:input-large"/>
+                    <input id="productId" path="productId" type="text" class="form:input-large"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="name">Nazwa</label>
                 <div class="col-lg-10">
-                    <form:input id="name" path="name" type="text" class="form:input-large"/>
+                    <input id="name" path="name" type="text" class="form:input-large"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="unitPrice">Cena</label>
                 <div class="col-lg-10">
                     <div class="form:input-prepend">
-                        <form:input id="unitPrice" path="unitPrice" type="text" class="form:input-large"/>
+                        <input id="unitPrice" path="unitPrice" type="text" class="form:input-large"/>
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="description">Opis</label>
                 <div class="col-lg-10">
-                    <form:textarea id="description" path="description" rows = "2"/>
+                    <input type="text" id="description" path="description" rows = "2"></inputtextarea>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="manufacturer">Producent</label>
                 <div class="col-lg-10">
-                    <form:input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
+                    <input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="category">Kategoria</label>
                 <div class="col-lg-10">
-                    <form:input id="category" path="category" type="text" class="form:input-large"/>
+                    <input id="category" path="category" type="text" class="form:input-large"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="unitsInStock">Liczba sztuk w magazynie </label>
                 <div class="col-lg-10">
-                    <form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
+                    <input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="condition">Stan</label>
                 <div class="col-lg-10">
-                    <form:radiobutton path="condition" value="New" /> Nowy
-                    <form:radiobutton path="condition" value="Old" /> Używany
-                    <form:radiobutton path="condition" value="Refurbished" /> Odnowiony
+                    <input type="radio" path="condition" value="New" /> Nowy
+                    <radiobutton path="condition" value="Old" /> Używany
+                    <radiobutton path="condition" value="Refurbished" /> Odnowiony
                 </div>
             </div>
             <div class="form-group">
@@ -109,7 +109,7 @@
                         code="addProdcut.form.productImage.label" />
                 </label>
                 <div class="col-lg-10">
-                    <form:input id="productImage" path="productImage" type="file"
+                    <input id="productImage" path="productImage" type="file"
                                 class="form:input-large" />
                 </div>
             </div>
@@ -120,7 +120,7 @@
                 </div>
             </div>
         </fieldset>
-    </form:form>
+    </form>
 </section>
 </body>
 </html>
