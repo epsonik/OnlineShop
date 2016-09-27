@@ -77,6 +77,7 @@ public class ProductController {
 		model.addAttribute("user", getPrincipal());
 		return "addProduct";
 	}
+
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
 		String[] suppressedFields = result.getSuppressedFields();
@@ -95,11 +96,10 @@ public class ProductController {
 				throw new RuntimeException("Pr�ba zapisu obrazka zako�czona niepowodzeniem", e);
 			}
 		}
-		System.out.println("jestem tutaj. Przechodzę do funkcji addProduct");
-		productService.addProduct(productToBeAdded);
-		System.out.println("już jestem po tej funkcji");
 
-		return "redirect:/products";
+		productService.addProduct(productToBeAdded);
+
+		return "redirect:/products/add";
 	}
 
 	@InitBinder
