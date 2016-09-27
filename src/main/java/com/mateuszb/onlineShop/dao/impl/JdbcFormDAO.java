@@ -21,7 +21,7 @@ public class JdbcFormDAO implements FormDAO {
 
     public void insert(Form form) {
 
-        String sqlStatement = "INSERT INTO USER_TABLE " + "(firstName, lastName, email, login, password) VALUES (?, ?, ?, ?, ?)";
+        String sqlStatement = "INSERT INTO USER_TABLE " + "(FIRSTNAME, LASTNAME, EMAIL, LOGIN, PASSWORD) VALUES (?, ?, ?, ?, ?)";
 
         Connection connection = null;
 

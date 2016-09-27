@@ -29,7 +29,7 @@ public class LoginController implements AuthenticationSuccessHandler, Authentica
     }
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public String logout(Model model) {
+    public String logout() {
         return "login";
     }
 

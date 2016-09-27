@@ -63,6 +63,13 @@ public class ProductController {
 		model.addAttribute("product", productService.getProductById(productId));
 		return "product";
 	}
+
+	@RequestMapping("/onlineProduct")
+	public String getOnlineProductById(@RequestParam("id") String productId, Model model) {
+		model.addAttribute("product", productService.getProductById(productId));
+		return "onlineProduct";
+	}
+
 	@RequestMapping(value = "/add",method = RequestMethod.GET)
 	public String getAddNewProductForm(Model model){
 		Product newProduct = new Product();
@@ -70,6 +77,7 @@ public class ProductController {
 		model.addAttribute("user", getPrincipal());
 		return "addProduct";
 	}
+
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
 		String[] suppressedFields = result.getSuppressedFields();
@@ -89,9 +97,9 @@ public class ProductController {
 			}
 		}
 
-
 		productService.addProduct(productToBeAdded);
-		return "redirect:/products";
+
+		return "redirect:/products/add";
 	}
 
 	@InitBinder

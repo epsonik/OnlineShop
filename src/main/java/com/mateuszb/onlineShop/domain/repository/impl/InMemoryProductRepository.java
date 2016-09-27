@@ -30,9 +30,9 @@ public class InMemoryProductRepository implements ProductRepository {
 	private List<Product> listOfProducts = new ArrayList<Product>();
 
 	public List<Product> getAllProducts() {
-		Product productById = null;
+		Product productById;
 
-		String sqlStatement = "SELECT A.ID AS id, A.NAME AS name, A.UNITPRICE AS unitPrice, " +
+		String sqlStatement = "SELECT A.PRODUCTID AS productId, A.NAME AS name, A.UNITPRICE AS unitPrice, " +
 				"A.DESCRIPTION AS description, A.UNITSINSTOCK AS unitsInStock," +
 				"B.NAME AS category, C.NAME AS manufacture FROM PRODUCT A " +
 				"JOIN PRODUCT_CATEGORIES B ON A.CATEGORY_ID = B.ID " +
@@ -46,7 +46,7 @@ public class InMemoryProductRepository implements ProductRepository {
 			ResultSet rs = ps.executeQuery();
 
 			while(rs.next()){
-				productById = new Product(Integer.toString(rs.getInt("id")), rs.getString("name"), rs.getBigDecimal("unitPrice"));
+				productById = new Product(rs.getString("productId"), rs.getString("name"), rs.getBigDecimal("unitPrice"));
 				productById.setDescription(rs.getString("description"));
 				productById.setCategory(rs.getString("category"));
 				productById.setManufacturer(rs.getString("manufacture"));
@@ -74,22 +74,22 @@ public class InMemoryProductRepository implements ProductRepository {
 	public Product getProductById(String productId) {
 		Product productById = null;
 
-		String sqlStatement = "SELECT A.ID AS id, A.NAME AS name, A.UNITPRICE AS unitPrice, " +
+		String sqlStatement = "SELECT A.PRODUCTID AS productId, A.NAME AS name, A.UNITPRICE AS unitPrice, " +
 				"A.DESCRIPTION AS description, A.UNITSINSTOCK AS unitsInStock," +
 				"B.NAME AS category, C.NAME AS manufacture FROM PRODUCT A " +
 				"JOIN PRODUCT_CATEGORIES B ON A.CATEGORY_ID = B.ID " +
-				"JOIN PRODUCT_MANUFACTURES C on A.MANUFACTURER_ID = C.ID WHERE A.ID=?";
+				"JOIN PRODUCT_MANUFACTURES C on A.MANUFACTURER_ID = C.ID WHERE A.PRODUCTID=?";
 
 		Connection connection = null;
 
 		try {
 			connection = dataSource.getConnection();
 			PreparedStatement ps = connection.prepareCall(sqlStatement);
-			ps.setInt(1, Integer.parseInt(productId));
+			ps.setString(1,productId);
 			ResultSet rs = ps.executeQuery();
 
 			if(rs.next()){
-				productById = new Product(Integer.toString(rs.getInt("id")), rs.getString("name"), rs.getBigDecimal("unitPrice"));
+				productById = new Product(rs.getString("productId"), rs.getString("name"), rs.getBigDecimal("unitPrice"));
 				productById.setDescription(rs.getString("description"));
 				productById.setCategory(rs.getString("category"));
 				productById.setManufacturer(rs.getString("manufacture"));
@@ -159,9 +159,167 @@ public class InMemoryProductRepository implements ProductRepository {
 	}
 
 	public void addProduct(Product product) {
-		System.out.println("ProductID: " + product.getProductId() + ". Nazwa:" + product.getName() + ". Cena: " +
-			product.getUnitPrice() + ". Opis: " + product.getDescription() + ". Producent: " + product.getManufacturer() +
-				". Kategoria: " + product.getCategory() + ". UnitsInStock: " + product.getUnitsInStock() + ". Cindition: " +
-					product.getCondition() + ". ");
+		Connection connection = null;
+		String sqlStatement;
+		ResultSet rs;
+
+		// sprawdzamy czy podany typ urządzenia już istnieje w bazie
+		// jeżeli tak to nie robimy nic
+		// jeżeli nie to dodajemy tą pozycję do bazy
+		sqlStatement = "SELECT * FROM PRODUCT_CATEGORIES WHERE NAME = ?";
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+			ps.setString(1, product.getCategory());
+			rs = ps.executeQuery();
+
+			if(!rs.next()) {
+				sqlStatement = "INSERT INTO PRODUCT_CATEGORIES" + "(NAME) VALUES (?)";
+				try {
+					connection = dataSource.getConnection();
+					ps = connection.prepareCall(sqlStatement);
+					ps.setString(1, product.getCategory());
+					ps.executeUpdate();
+					ps.close();
+				} catch (SQLException e){
+					throw new RuntimeException(e);
+				} finally {
+					if (connection != null) {
+						try{
+							connection.close();
+						} catch (SQLException e) { }
+					}
+				}
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
+			}
+		}
+
+
+		// sprawdzamy czy podany producent już istnieje w bazie
+		// jeżeli tak to nie robimy nic
+		// jeżeli nie to dodajemy tą pozycję do bazy
+		sqlStatement = "SELECT * FROM PRODUCT_MANUFACTURES WHERE NAME = ?";
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+			ps.setString(1, product.getManufacturer());
+			rs = ps.executeQuery();
+
+			if(!rs.next()) {
+				sqlStatement = "INSERT INTO PRODUCT_MANUFACTURES" + "(NAME) VALUES (?)";
+				try {
+					connection = dataSource.getConnection();
+					ps = connection.prepareCall(sqlStatement);
+					ps.setString(1, product.getManufacturer());
+					ps.executeUpdate();
+					ps.close();
+				} catch (SQLException e){
+					throw new RuntimeException(e);
+				} finally {
+					if (connection != null) {
+						try{
+							connection.close();
+						} catch (SQLException e) { }
+					}
+				}
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
+			}
+		}
+
+		// pobieramy z bazy id kategorii produktu
+		// 0 oznacza w bazie brak kategorii
+		int category_id = 0;
+		sqlStatement = "SELECT * FROM PRODUCT_CATEGORIES WHERE NAME = ?";
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+			ps.setString(1, product.getCategory());
+			rs = ps.executeQuery();
+
+			if(rs.next()) {
+				category_id = rs.getInt("id");
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
+			}
+		}
+
+		// pobieramy z bazy id producenta produktu
+		// 0 oznacza w bazie brak producenta
+		int manufactury_id = 0;
+		sqlStatement = "SELECT * FROM PRODUCT_MANUFACTURES WHERE NAME = ?";
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+			ps.setString(1, product.getManufacturer());
+			rs = ps.executeQuery();
+
+			if(rs.next()) {
+				manufactury_id = rs.getInt("id");
+			}
+			rs.close();
+			ps.close();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
+			}
+		}
+
+		//dodawanie do tabeli PRODUCT
+		sqlStatement = "INSERT INTO PRODUCT (PRODUCTID, NAME, DESCRIPTION, UNITPRICE, UNITSINSTOCK, CATEGORY_ID, MANUFACTURER_ID) " +
+				"VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+			ps.setString(1, product.getProductId());
+			ps.setString(2, product.getName());
+			ps.setString(3, product.getDescription());
+			ps.setBigDecimal(4, product.getUnitPrice());
+			ps.setLong(5, product.getUnitsInStock());
+			ps.setInt(6, category_id);
+			ps.setInt(7, manufactury_id);
+
+			ps.executeUpdate();
+			ps.close();
+
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
+			}
+		}
 	}
 }

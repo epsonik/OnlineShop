@@ -49,73 +49,81 @@
     </div>
 </section>
 <section class="container">
-    <form:form modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
+    <form:form action="${pageContext.request.contextPath}/products/add" modelAttribute="newProduct" method="post">
         <fieldset>
             <legend>Dodaj nowy produkt</legend>
             <div class="form-group">
-                <label class="control-label col-lg-2 col-lg-2" for="productId"><spring:message code="addProdcut.form.productId.label"/></label>
+                <label class="control-label col-lg-2" for="productId">
+                    <spring:message code="addProdcut.form.productId.label"/>
+                </label>
                 <div class="col-lg-10">
-                    <form:input id="productId" path="productId" type="text" class="form:input-large"/>
+                    <form:input path="productId" id="productId" cssClass="form:input-large"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="name">Nazwa</label>
                 <div class="col-lg-10">
-                    <form:input id="name" path="name" type="text" class="form:input-large"/>
+                    <form:input path="name" id="name" cssClass="form:input-large"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="unitPrice">Cena</label>
                 <div class="col-lg-10">
-                    <div class="form:input-prepend">
-                        <form:input id="unitPrice" path="unitPrice" type="text" class="form:input-large"/>
-                    </div>
+                    <form:input path="unitPrice" id="unitPrice" cssClass="form:input-large"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="description">Opis</label>
                 <div class="col-lg-10">
-                    <form:textarea id="description" path="description" rows = "2"/>
+                    <form:textarea path="description" id="description" cols="15" rows="5"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="manufacturer">Producent</label>
                 <div class="col-lg-10">
-                    <form:input id="manufacturer" path="manufacturer" type="text" class="form:input-large"/>
+                    <form:input path="manufacturer" id="manufacturer" cssClass="form:input-large"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="category">Kategoria</label>
                 <div class="col-lg-10">
-                    <form:input id="category" path="category" type="text" class="form:input-large"/>
+                    <form:input path="category" id="category" cssClass="form:input-large"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="unitsInStock">Liczba sztuk w magazynie </label>
+                <label class="control-label col-lg-2" for="unitsInStock">Liczba sztuk w magazynie</label>
                 <div class="col-lg-10">
-                    <form:input id="unitsInStock" path="unitsInStock" type="text" class="form:input-large"/>
+                    <form:input path="unitsInStock" id="unitsInStock" cssClass="form:input-large"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="condition">Stan</label>
+                <label class="control-label col-lg-2">Stan</label>
                 <div class="col-lg-10">
-                    <form:radiobutton path="condition" value="New" /> Nowy
-                    <form:radiobutton path="condition" value="Old" /> Używany
-                    <form:radiobutton path="condition" value="Refurbished" /> Odnowiony
+                    <form:radiobutton path="condition" value="New"/> Nowy
+                    <form:radiobutton path="condition" value="Old"/> Uzywany
+                    <form:radiobutton path="condition" value="Refurbished"/> Odnowiony
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="productImage"`> <spring:message
-                        code="addProdcut.form.productImage.label" />
+                <label class="control-label col-lg-2" for="productImage">
+                    <spring:message code="addProdcut.form.productImage.label"/>
                 </label>
                 <div class="col-lg-10">
-                    <form:input id="productImage" path="productImage" type="file"
-                                class="form:input-large" />
+                    <form:input path="productImage" id="productImage" type="file" cssClass="form:input-larde"/>
                 </div>
             </div>
+            <br><br>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <input type="submit" id="btnAdd" class="btn btn-primary" value ="Dodaj"/>
+                    <input type="SUBMIT" value="Dodaj"/>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </div>
             </div>
