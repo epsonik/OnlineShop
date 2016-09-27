@@ -25,8 +25,8 @@
     <security:authentication-manager>
         <security:authentication-provider>
             <security:jdbc-user-service data-source-ref="dataSource2"
-                                        users-by-username-query="SELECT login as name, password as password, 'true' as enabled FROM user_table WHERE login=?;"
-                                        authorities-by-username-query="SELECT b.login as name , a.role_id as authorities FROM user_roles a JOIN user_table b
+                                        users-by-username-query="SELECT login as name, password as password, 'true' as enabled FROM USER_TABLE WHERE login=?;"
+                                        authorities-by-username-query="SELECT b.login as name , a.role_id as authorities FROM USER_ROLES a JOIN USER_TABLE b
                                                                          on a.user_id = b.id WHERE b.login=?;"/>
         </security:authentication-provider>
     </security:authentication-manager>
@@ -37,8 +37,7 @@
     <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/OnlineShop?useSSL=false"/>
-        <property name="username" value="jgac"/>
-        <property name="password" value="jgac"/>
+        <property name="username" value="mbarto"/>
     </bean>
 
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>

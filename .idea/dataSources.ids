@@ -2189,7 +2189,7 @@
       </column>
     </database-model>
   </data-source>
-  <data-source name="MySQL - OnlineShop@localhost" uuid="96500c3a-85ed-4f32-9db0-f530b644dbc2">
+  <data-source name="MySQL - OnlineShop@localhost" uuid="cc2cfc0e-47cf-473c-b83f-ad0c9ee12dcf">
     <database-info product="MySQL" version="5.5.52-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -2219,8 +2219,7 @@
         <data-type>varchar(45)|0</data-type>
       </column>
       <column id="14" parent="5" name="image_data">
-        <mandatory>1</mandatory>
-        <data-type>blob|0</data-type>
+        <data-type>longblob|0</data-type>
       </column>
       <key id="15" parent="5" name="PRIMARY">
         <columns>id</columns>
@@ -2231,181 +2230,188 @@
         <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="17" parent="6" name="name">
+      <column id="17" parent="6" name="productID">
         <mandatory>1</mandatory>
         <data-type>varchar(45)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="18" parent="6" name="description">
+      <column id="18" parent="6" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(45)|0</data-type>
+        <default-expression>&apos;&apos;</default-expression>
+      </column>
+      <column id="19" parent="6" name="description">
         <mandatory>1</mandatory>
         <data-type>varchar(256)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="19" parent="6" name="unitPrice">
+      <column id="20" parent="6" name="unitPrice">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="20" parent="6" name="unitsInStock">
+      <column id="21" parent="6" name="unitsInStock">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="21" parent="6" name="unitsInOrder">
+      <column id="22" parent="6" name="unitsInOrder">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="22" parent="6" name="discontinued">
+      <column id="23" parent="6" name="discontinued">
         <data-type>tinyint(1)|0</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="23" parent="6" name="condition">
+      <column id="24" parent="6" name="condition">
         <mandatory>1</mandatory>
         <data-type>varchar(256)|0</data-type>
         <default-expression>&apos;nowy&apos;</default-expression>
       </column>
-      <column id="24" parent="6" name="category_id">
+      <column id="25" parent="6" name="category_id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="25" parent="6" name="manufacturer_id">
+      <column id="26" parent="6" name="manufacturer_id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
+        <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <index id="26" parent="6" name="category_id">
+      <index id="27" parent="6" name="category_id">
         <columns>category_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="27" parent="6" name="manufacturer_id">
+      <index id="28" parent="6" name="manufacturer_id">
         <columns>manufacturer_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="28" parent="6" name="PRIMARY">
+      <key id="29" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="29" parent="6" name="PRODUCT_ibfk_1">
+      <foreign-key id="30" parent="6" name="PRODUCT_ibfk_1">
         <columns>category_id</columns>
         <ref-key>~.PRODUCT_CATEGORIES.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="30" parent="6" name="PRODUCT_ibfk_2">
+      <foreign-key id="31" parent="6" name="PRODUCT_ibfk_2">
         <columns>manufacturer_id</columns>
         <ref-key>~.PRODUCT_MANUFACTURES.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="31" parent="7" name="id">
+      <column id="32" parent="7" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="32" parent="7" name="name">
+      <column id="33" parent="7" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <key id="33" parent="7" name="PRIMARY">
+      <key id="34" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="34" parent="8" name="id">
+      <column id="35" parent="8" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="35" parent="8" name="name">
+      <column id="36" parent="8" name="name">
         <mandatory>1</mandatory>
         <data-type>varchar(45)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <key id="36" parent="8" name="PRIMARY">
+      <key id="37" parent="8" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="37" parent="9" name="id">
+      <column id="38" parent="9" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="38" parent="9" name="description">
+      <column id="39" parent="9" name="description">
         <mandatory>1</mandatory>
         <data-type>varchar(256)|0</data-type>
       </column>
-      <key id="39" parent="9" name="PRIMARY">
+      <key id="40" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="40" parent="10" name="id">
+      <column id="41" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="41" parent="10" name="user_id">
+      <column id="42" parent="10" name="user_id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
       </column>
-      <column id="42" parent="10" name="role_id">
+      <column id="43" parent="10" name="role_id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
       </column>
-      <index id="43" parent="10" name="role_id">
+      <index id="44" parent="10" name="role_id">
         <columns>role_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <index id="44" parent="10" name="user_id">
+      <index id="45" parent="10" name="user_id">
         <columns>user_id</columns>
         <desc-columns></desc-columns>
       </index>
-      <key id="45" parent="10" name="PRIMARY">
+      <key id="46" parent="10" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <foreign-key id="46" parent="10" name="USER_ROLES_ibfk_1">
+      <foreign-key id="47" parent="10" name="USER_ROLES_ibfk_1">
         <columns>user_id</columns>
         <ref-key>~.USER_TABLE.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <foreign-key id="47" parent="10" name="USER_ROLES_ibfk_2">
+      <foreign-key id="48" parent="10" name="USER_ROLES_ibfk_2">
         <columns>role_id</columns>
         <ref-key>~.ROLE_DICTIONARY.PRIMARY</ref-key>
         <cascade-update-rule>restrict</cascade-update-rule>
         <cascade-delete-rule>restrict</cascade-delete-rule>
       </foreign-key>
-      <column id="48" parent="11" name="id">
+      <column id="49" parent="11" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)|0</data-type>
         <sequence-identity>1</sequence-identity>
       </column>
-      <column id="49" parent="11" name="firstName">
+      <column id="50" parent="11" name="firstName">
         <mandatory>1</mandatory>
         <data-type>varchar(45)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="50" parent="11" name="lastName">
+      <column id="51" parent="11" name="lastName">
         <mandatory>1</mandatory>
         <data-type>varchar(45)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="51" parent="11" name="email">
+      <column id="52" parent="11" name="email">
         <mandatory>1</mandatory>
         <data-type>varchar(45)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="52" parent="11" name="login">
+      <column id="53" parent="11" name="login">
         <mandatory>1</mandatory>
         <data-type>varchar(45)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="53" parent="11" name="password">
+      <column id="54" parent="11" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(257)|0</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <key id="54" parent="11" name="PRIMARY">
+      <key id="55" parent="11" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
