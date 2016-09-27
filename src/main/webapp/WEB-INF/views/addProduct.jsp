@@ -100,8 +100,8 @@
                 <label class="control-label col-lg-2" for="condition">Stan</label>
                 <div class="col-lg-10">
                     <input type="radio" path="condition" value="New" /> Nowy
-                    <radiobutton path="condition" value="Old" /> Używany
-                    <radiobutton path="condition" value="Refurbished" /> Odnowiony
+                    <input type="radio" path="condition" value="Old" /> Używany
+                    <input type="radio" path="condition" value="Refurbished" /> Odnowiony
                 </div>
             </div>
             <div class="form-group">

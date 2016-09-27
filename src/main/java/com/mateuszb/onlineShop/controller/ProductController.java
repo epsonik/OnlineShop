@@ -63,6 +63,13 @@ public class ProductController {
 		model.addAttribute("product", productService.getProductById(productId));
 		return "product";
 	}
+
+	@RequestMapping("/onlineProduct")
+	public String getOnlineProductById(@RequestParam("id") String productId, Model model) {
+		model.addAttribute("product", productService.getProductById(productId));
+		return "onlineProduct";
+	}
+
 	@RequestMapping(value = "/add",method = RequestMethod.GET)
 	public String getAddNewProductForm(Model model){
 		Product newProduct = new Product();
@@ -88,9 +95,10 @@ public class ProductController {
 				throw new RuntimeException("Pr�ba zapisu obrazka zako�czona niepowodzeniem", e);
 			}
 		}
-
-
+		System.out.println("jestem tutaj. Przechodzę do funkcji addProduct");
 		productService.addProduct(productToBeAdded);
+		System.out.println("już jestem po tej funkcji");
+
 		return "redirect:/products";
 	}
 
