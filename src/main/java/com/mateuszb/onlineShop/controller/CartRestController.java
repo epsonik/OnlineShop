@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
-@RequestMapping(value = "rest/cart")
+@RequestMapping(value = "rest/onlineCart")
 public class CartRestController {
 
 	@Autowired
