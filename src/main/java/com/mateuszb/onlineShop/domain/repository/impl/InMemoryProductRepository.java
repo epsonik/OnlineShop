@@ -5,15 +5,15 @@ import com.mateuszb.onlineShop.domain.repository.ProductRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
 import javax.sql.DataSource;
-import java.awt.image.BufferedImage;
-import java.io.*;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
+import java.io.File;
 
 
 @Repository
@@ -319,9 +319,11 @@ public class InMemoryProductRepository implements ProductRepository {
 			}
 		}
 
-/*
 		sqlStatement = "INSERT INTO IMAGES (IMAGE_TITLE) VALUES (?)";
 
+
+		System.out.println("Nazwa pliku: " + product.getProductImage().getOriginalFilename());
+/*
 		try {
 			connection = dataSource.getConnection();
 			PreparedStatement ps = connection.prepareCall(sqlStatement);

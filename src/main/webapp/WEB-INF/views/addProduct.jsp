@@ -49,8 +49,7 @@
     </div>
 </section>
 <section class="container">
-    <form:form action="${pageContext.request.contextPath}/products/add" modelAttribute="newProduct"
-               method="post">
+    <form:form action="${pageContext.request.contextPath}/products/add" modelAttribute="newProduct" method="post">
         <fieldset>
             <legend>Dodaj nowy produkt</legend>
             <div class="form-group">

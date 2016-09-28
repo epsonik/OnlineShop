@@ -50,7 +50,7 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj ${user}! </h1>
+            <br><h1> Witaj ${user}! </h1><br>
             <h2>Produkty</h2>
             <p>Wszystkie produkty dostępne w naszym sklepie</p>
         </div>

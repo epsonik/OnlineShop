@@ -4,10 +4,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-    <script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-    <script src="/resources/js/controllers.js"></script>
-    <title>Produkty</title>
+    <link rel="stylesheet"
+          href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <title>Produkt</title>
 </head>
 <body>
 
@@ -42,7 +41,7 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <h1>${product.name}</h1>
+            <h1>Produkt</h1>
         </div>
     </div>
 </section>
@@ -68,11 +67,11 @@
                 <strong>Liczba sztuk w magazynie</strong>: ${product.unitsInStock}
             </p>
             <h4>${product.unitPrice} PLN</h4>
-            <p data-ng-controller="cartCtrl">
-                <a href="<spring:url value="/onlineCart" />" class="btn btn-warning btn-large">
-                    <span class="glyphicon-shopping-cart glyphicon"></span> Koszyk </a>
-                <a href="<spring:url value="/onlineHome" />" class="btn btn-default">
-                <span class="glyphicon-hand-left glyphicon"></span> Powrót </a>
+            <p>
+                <a href="#" class="btn btn-warning btn-large"> <span
+                        class="glyphicon-shopping-cart glyphicon"></span> Zamów teraz
+                </a> <a href="<spring:url value="/onlineHome" />" class="btn btn-default">
+                <span class="glyphicon-hand-left glyphicon"></span> powrót</a>
             </p>
         </div>
     </div>

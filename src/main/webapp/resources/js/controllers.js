@@ -3,14 +3,14 @@ var cartApp = angular.module('cartApp', []);
 cartApp.controller('cartCtrl',  function ($scope, $http) {
 	
 	$scope.refreshCart = function(cartId) {
-		  						$http.get('/rest/onlineCart/'+$scope.cartId)
+		  						$http.get('/webstore/rest/cart/'+$scope.cartId)
 		  						 	 .success(function(data) {
 		  						 		 		$scope.cart = data;
 		  						 	 		});
 		  					};
 		  					
 	$scope.clearCart = function() {
-		  						$http.delete('/rest/onlineCart/'+$scope.cartId)
+		  						$http.delete('/webstore/rest/cart/'+$scope.cartId)
 		  							 .success($scope.refreshCart($scope.cartId));
 		  						
 	  					  };
@@ -21,16 +21,16 @@ cartApp.controller('cartCtrl',  function ($scope, $http) {
 	  						};
 	  						
 	  $scope.addToCart = function(productId) {
-		  						$http.put('/rest/onlineCart/add/'+productId)
+		  						$http.put('/webstore/rest/cart/add/'+productId)
 		  						 	 .success(function(data) {
-		  						 		 		$scope.refreshCart($http.get('/rest/onlineCart/get/cartId'));
+		  						 		 		$scope.refreshCart($http.get('/webstore/rest/cart/get/cartId'));
 		  						 		 		alert("Produkt pomyślnie dodany do koszyka!");
 		  						 	 		});
 		  					};
 	  $scope.removeFromCart = function(productId) {
-			  						$http.put('/rest/onlineCart/remove/'+productId)
+			  						$http.put('/webstore/rest/cart/remove/'+productId)
 			  						 	 .success(function(data) {
-			  						 		 	$scope.refreshCart($http.get('/rest/onlineCart/get/cartId'));
+			  						 		 	$scope.refreshCart($http.get('/webstore/rest/cart/get/cartId'));
 			  						 	 		});
 			  					};
 	  });
