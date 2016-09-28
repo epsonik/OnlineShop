@@ -7,14 +7,35 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<link rel="stylesheet"	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 	<script	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
-	<script src="/webstore/resource/js/controllers.js"></script>
+	<script src="/resources/js/controllers.js"></script>
 	<title>Produkty</title>
 </head>
 <body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href='<spring:url value="/"/>'>Mati Shop</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href='<spring:url value="/"/>'>Strona główna</a></li>
+                <li><a href='<spring:url value="/login"/>'>Logowanie</a></li>
+                <li><a href='<spring:url value="/registration"/>'>Rejestracja</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <section>
 	<div class="jumbotron">
 		<div class="container">
-			<h1>Produkty</h1>
+			<h1>${product.name}</h1>
 		</div>
 	</div>
 </section>
@@ -43,19 +64,11 @@
 				<strong>Liczba sztuk w magazynie</strong>: ${product.unitsInStock}
 			</p>
 			<h4>${product.unitPrice} PLN</h4>
-			<p ng-controller="cartCtrl">
-				<a href="#" class="btn btn-warning btn-large" ng-click="addToCart('${product.productId}')">
-					<span class="glyphicon-shopping-cart glyphicon"></span> Zamów teraz </a>
-				<a href="<spring:url value="/cart" />" class="btn btn-default">
-					<span class="glyphicon-hand-right glyphicon"></span> Koszyk
+			<p data-ng-controller="cartCtrl">
+				<a href="<spring:url value="/" />" class="btn btn-default">
+					<span class="glyphicon-hand-left glyphicon"></span> Wstecz
 				</a>
-
-				<a href="<spring:url value="/products" />" class="btn btn-default">
-					<span class="glyphicon-hand-left glyphicon"></span> wstecz
-				</a>
-
 			</p>
-
 		</div>
 	</div>
 </section>

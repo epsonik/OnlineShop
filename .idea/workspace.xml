@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="81068ecf-41d9-4a25-b14c-6c56baf22489" name="Default" comment="Polaczenie koszyka z reszta">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/onlineShop_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/onlineShop_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/onlineShop.iml" afterPath="$PROJECT_DIR$/onlineShop.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartRestController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartRestController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/ProductController.java" afterPath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/ProductController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/webcontext/security-context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/webcontext/security-context.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineCart.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineCart.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineHome.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineHome.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineProduct.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineProduct.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/resources/js/controllers.js" afterPath="$PROJECT_DIR$/src/main/webapp/resources/js/controllers.js" />
     </list>
     <ignored path="untitled8.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -53,39 +40,100 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="InMemoryProductRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java">
+      <file leaf-file-name="CartController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="333" column="31" selection-start-line="333" selection-start-column="31" selection-end-line="333" selection-end-column="31" />
+            <state relative-caret-position="293">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#700#701#0" expanded="false" />
-                <element signature="e#735#736#0" expanded="false" />
-                <element signature="e#791#800#0" expanded="false" />
-                <element signature="e#3653#3662#0" expanded="false" />
-                <element signature="e#4010#4019#0" expanded="false" />
-                <element signature="e#4070#4079#0" expanded="false" />
-                <marker date="1475063407000" expanded="true" signature="895:1229" ph="SELECT A.PRO... PRODUCT" />
-                <marker date="1475063407000" expanded="true" signature="2237:2591" ph="SELECT A.PRO... PRODUCT" />
-                <marker date="1475063407000" expanded="true" signature="4962:5009" ph="SELECT * FRO... PRODUCT_CATEGORIES" />
-                <marker date="1475063407000" expanded="true" signature="5239:5291" ph="INSERT INTO PRODUCT_CATEGORIES... " />
-                <marker date="1475063407000" expanded="true" signature="6058:6107" ph="SELECT * FRO... PRODUCT_MANUFACTURES" />
-                <marker date="1475063407000" expanded="true" signature="6341:6395" ph="INSERT INTO PRODUCT_MANUFACTURES... " />
-                <marker date="1475063407000" expanded="true" signature="7132:7179" ph="SELECT * FRO... PRODUCT_CATEGORIES" />
-                <marker date="1475063407000" expanded="true" signature="7768:7817" ph="SELECT * FRO... PRODUCT_MANUFACTURES" />
-                <marker date="1475063407000" expanded="true" signature="8335:8478" ph="INSERT INTO PRODUCT... " />
-                <marker date="1475063407000" expanded="true" signature="9126:9169" ph="INSERT INTO IMAGES... " />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CartController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartController.java">
+      <file leaf-file-name="onlineHome.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineHome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+            <state relative-caret-position="438">
+              <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+              <folding>
+                <marker date="1475093782000" expanded="true" signature="218:1093" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="519:637" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="749:867" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="955:1084" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1100:3769" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1154:2380" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1182:2373" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1218:1727" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1308:1621" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1786:2362" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1826:1946" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1999:2347" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2020:2329" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2112:2307" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2391:2628" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2419:2617" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2451:2606" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2657:3760" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2679:3749" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2733:3738" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2806:3717" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2846:3698" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2934:2968" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3045:3675" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3313:3647" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3345:3618" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="onlineCart.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineCart.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-45">
+              <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="onlineProduct.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineProduct.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="293">
+              <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="product.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/HomeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="42" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -94,9 +142,50 @@
       <file leaf-file-name="addProduct.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="118" column="24" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="1740">
+              <caret line="116" column="24" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="24" />
+              <folding>
+                <marker date="1475093782000" expanded="true" signature="288:5796" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="295:502" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="509:5788" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="563:1850" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="591:1843" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="627:1138" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="717:1030" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1197:1832" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1237:1359" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1412:1817" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1490:1799" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1582:1777" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1861:2047" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1889:2036" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="1921:2025" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2075:5780" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2176:5769" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2209:5752" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2294:2643" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2365:2467" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2507:2624" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2701:2946" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="2820:2927" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3004:3263" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3127:3244" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3321:3580" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3446:3561" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3638:3911" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3769:3892" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3969:4230" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="4096:4211" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="4288:4576" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="4434:4557" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="4634:5021" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="4741:5002" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="5079:5423" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="5153:5258" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="5298:5404" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="5481:5732" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="5537:5713" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,10 +193,11 @@
       <file leaf-file-name="ProductController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/ProductController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="960">
-              <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+            <state relative-caret-position="915">
+              <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="false" />
+                <marker date="1475093782000" expanded="false" signature="52:716" ph="..." />
+                <marker date="1475093782000" expanded="true" signature="3674:3713" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -172,14 +262,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartRestController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineCart.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineProduct.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/js/controllers.js" />
-        <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineProduct.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartController.java" />
       </list>
     </option>
   </component>
@@ -206,7 +296,7 @@
   <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
-    <option name="height" value="810" />
+    <option name="height" value="807" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -260,6 +350,7 @@
     <panes>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -666,7 +757,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1282,7 +1372,8 @@
       <workItem from="1474876333795" duration="27020000" />
       <workItem from="1474956500515" duration="15757000" />
       <workItem from="1475049557207" duration="13571000" />
-      <workItem from="1475092332363" duration="20000" />
+      <workItem from="1475092332363" duration="243000" />
+      <workItem from="1475093364500" duration="762000" />
     </task>
     <task id="LOCAL-00001" summary="first">
       <created>1473030307856</created>
@@ -1368,11 +1459,25 @@
       <option name="project" value="LOCAL" />
       <updated>1475061482518</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Polaczenie koszyka z reszta">
+      <created>1475092397612</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1475092397612</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Polaczenie koszyka z reszta">
+      <created>1475093539507</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1475093539507</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94841000" />
+    <option name="totallyTimeSpent" value="95826000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1384,19 +1489,20 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="810" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="807" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3104895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45594406" sideWeight="0.5091633" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972136" sideWeight="0.49721116" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908365" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3916084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45820433" sideWeight="0.49083665" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3916084" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1414,7 +1520,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3104895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32817337" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
@@ -1478,7 +1583,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/OnlineAdminHomeController.java" />
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -1490,6 +1594,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1497,6 +1602,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1504,6 +1610,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="18" column="78" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1539,6 +1646,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
           <caret line="43" column="37" selection-start-line="43" selection-start-column="37" selection-end-line="43" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#1057#1058#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1554,6 +1665,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1585,6 +1697,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1599,6 +1712,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1653,8 +1767,8 @@
         <state relative-caret-position="326">
           <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
           <folding>
-            <marker date="1475050682000" expanded="true" signature="1533:1624" ph="SELECT login... USER_TABLE" />
-            <marker date="1475050682000" expanded="true" signature="1698:1892" ph="SELECT b.log... USER_ROLES" />
+            <marker date="1475093782000" expanded="true" signature="1533:1624" ph="SELECT login... USER_TABLE" />
+            <marker date="1475093782000" expanded="true" signature="1698:1892" ph="SELECT b.log... USER_ROLES" />
           </folding>
         </state>
       </provider>
@@ -1673,47 +1787,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineHome.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-772">
-          <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartRestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <element signature="e#1573#1574#0" expanded="true" />
-            <element signature="e#1606#1607#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/js/controllers.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineCart.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="64" column="17" selection-start-line="64" selection-start-column="17" selection-end-line="64" selection-end-column="17" />
           <folding />
         </state>
       </provider>
@@ -1730,14 +1807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
           <caret line="84" column="41" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineProduct.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-462">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1760,14 +1829,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/LoginController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -1786,53 +1847,175 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/addProduct.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="118" column="24" selection-start-line="118" selection-start-column="24" selection-end-line="118" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="1740">
+          <caret line="116" column="24" selection-start-line="116" selection-start-column="24" selection-end-line="116" selection-end-column="24" />
+          <folding>
+            <marker date="1475093782000" expanded="true" signature="288:5796" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="295:502" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="509:5788" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="563:1850" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="591:1843" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="627:1138" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="717:1030" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1197:1832" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1237:1359" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1412:1817" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1490:1799" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1582:1777" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1861:2047" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1889:2036" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1921:2025" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2075:5780" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2176:5769" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2209:5752" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2294:2643" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2365:2467" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2507:2624" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2701:2946" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2820:2927" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3004:3263" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3127:3244" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3321:3580" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3446:3561" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3638:3911" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3769:3892" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3969:4230" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="4096:4211" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="4288:4576" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="4434:4557" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="4634:5021" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="4741:5002" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="5079:5423" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="5153:5258" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="5298:5404" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="5481:5732" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="5537:5713" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/ProductController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="960">
-          <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+        <state relative-caret-position="915">
+          <caret line="73" column="5" selection-start-line="73" selection-start-column="5" selection-end-line="73" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="false" />
+            <marker date="1475093782000" expanded="false" signature="52:716" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3674:3713" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartRestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-162">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/domain/repository/impl/InMemoryProductRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
+        <state relative-caret-position="1473">
           <caret line="333" column="31" selection-start-line="333" selection-start-column="31" selection-end-line="333" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#700#701#0" expanded="false" />
-            <element signature="e#735#736#0" expanded="false" />
-            <element signature="e#791#800#0" expanded="false" />
-            <element signature="e#3653#3662#0" expanded="false" />
-            <element signature="e#4010#4019#0" expanded="false" />
-            <element signature="e#4070#4079#0" expanded="false" />
-            <marker date="1475063407000" expanded="true" signature="895:1229" ph="SELECT A.PRO... PRODUCT" />
-            <marker date="1475063407000" expanded="true" signature="2237:2591" ph="SELECT A.PRO... PRODUCT" />
-            <marker date="1475063407000" expanded="true" signature="4962:5009" ph="SELECT * FRO... PRODUCT_CATEGORIES" />
-            <marker date="1475063407000" expanded="true" signature="5239:5291" ph="INSERT INTO PRODUCT_CATEGORIES... " />
-            <marker date="1475063407000" expanded="true" signature="6058:6107" ph="SELECT * FRO... PRODUCT_MANUFACTURES" />
-            <marker date="1475063407000" expanded="true" signature="6341:6395" ph="INSERT INTO PRODUCT_MANUFACTURES... " />
-            <marker date="1475063407000" expanded="true" signature="7132:7179" ph="SELECT * FRO... PRODUCT_CATEGORIES" />
-            <marker date="1475063407000" expanded="true" signature="7768:7817" ph="SELECT * FRO... PRODUCT_MANUFACTURES" />
-            <marker date="1475063407000" expanded="true" signature="8335:8478" ph="INSERT INTO PRODUCT... " />
-            <marker date="1475063407000" expanded="true" signature="9126:9169" ph="INSERT INTO IMAGES... " />
+            <marker date="1475093782000" expanded="true" signature="895:1229" ph="SELECT A.PRO... PRODUCT" />
+            <marker date="1475093782000" expanded="true" signature="2237:2591" ph="SELECT A.PRO... PRODUCT" />
+            <marker date="1475093782000" expanded="true" signature="4962:5009" ph="SELECT * FRO... PRODUCT_CATEGORIES" />
+            <marker date="1475093782000" expanded="true" signature="5239:5291" ph="INSERT INTO PRODUCT_CATEGORIES... " />
+            <marker date="1475093782000" expanded="true" signature="6058:6107" ph="SELECT * FRO... PRODUCT_MANUFACTURES" />
+            <marker date="1475093782000" expanded="true" signature="6341:6395" ph="INSERT INTO PRODUCT_MANUFACTURES... " />
+            <marker date="1475093782000" expanded="true" signature="7132:7179" ph="SELECT * FRO... PRODUCT_CATEGORIES" />
+            <marker date="1475093782000" expanded="true" signature="7768:7817" ph="SELECT * FRO... PRODUCT_MANUFACTURES" />
+            <marker date="1475093782000" expanded="true" signature="8335:8478" ph="INSERT INTO PRODUCT... " />
+            <marker date="1475093782000" expanded="true" signature="9126:9169" ph="INSERT INTO IMAGES... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineHome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="78" column="0" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <marker date="1475093782000" expanded="true" signature="218:1093" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="519:637" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="749:867" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="955:1084" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1100:3769" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1154:2380" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1182:2373" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1218:1727" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1308:1621" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1786:2362" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1826:1946" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="1999:2347" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2020:2329" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2112:2307" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2391:2628" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2419:2617" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2451:2606" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2657:3760" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2679:3749" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2733:3738" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2806:3717" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2846:3698" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="2934:2968" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3045:3675" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3313:3647" ph="..." />
+            <marker date="1475093782000" expanded="true" signature="3345:3618" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineCart.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-45">
+          <caret line="16" column="52" selection-start-line="16" selection-start-column="52" selection-end-line="16" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="42" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/HomeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/product.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/onlineProduct.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="293">
+          <caret line="74" column="16" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/mateuszb/onlineShop/controller/CartController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
-          <folding />
+        <state relative-caret-position="293">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

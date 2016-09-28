@@ -71,7 +71,7 @@
                 <a href="#" class="btn btn-warning btn-large"> <span
                         class="glyphicon-shopping-cart glyphicon"></span> Zamów teraz
                 </a> <a href="<spring:url value="/onlineHome" />" class="btn btn-default">
-                <span class="glyphicon-hand-left glyphicon"></span> powrót</a>
+                <span class="glyphicon-hand-left glyphicon"></span> Powrót</a>
             </p>
         </div>
     </div>
