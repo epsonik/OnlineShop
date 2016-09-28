@@ -1,21 +1,19 @@
 package com.mateuszb.onlineShop.domain.repository.impl;
 
-import java.math.BigDecimal;
+import com.mateuszb.onlineShop.domain.Product;
+import com.mateuszb.onlineShop.domain.repository.ProductRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.sql.DataSource;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import com.mateuszb.onlineShop.domain.Product;
-import com.mateuszb.onlineShop.domain.repository.ProductRepository;
-import org.springframework.stereotype.Repository;
-
-import javax.sql.DataSource;
+import java.util.*;
+import java.io.File;
 
 
 @Repository
@@ -203,7 +201,6 @@ public class InMemoryProductRepository implements ProductRepository {
 			}
 		}
 
-
 		// sprawdzamy czy podany producent już istnieje w bazie
 		// jeżeli tak to nie robimy nic
 		// jeżeli nie to dodajemy tą pozycję do bazy
@@ -321,5 +318,38 @@ public class InMemoryProductRepository implements ProductRepository {
 				} catch (SQLException e) { }
 			}
 		}
+
+		sqlStatement = "INSERT INTO IMAGES (IMAGE_TITLE) VALUES (?)";
+
+
+		System.out.println("Nazwa pliku: " + product.getProductImage().getOriginalFilename());
+/*
+		try {
+			connection = dataSource.getConnection();
+			PreparedStatement ps = connection.prepareCall(sqlStatement);
+
+			//File imgFile = new File(product.getProductImage().getName());
+			//FileInputStream fin = null;
+			//try {
+			//	fin = new FileInputStream(imgFile);
+			//} catch (FileNotFoundException e) {
+			//	e.printStackTrace();
+			//}
+
+			ps.setString(1, product.getProductImage().getName());
+			//ps.setBinaryStream(2, fin, (int) imgFile.length());
+
+			ps.executeUpdate();
+			ps.close();
+		} catch (SQLException e){
+			throw new RuntimeException(e);
+		} finally {
+			if (connection != null) {
+				try{
+					connection.close();
+				} catch (SQLException e) { }
+			}
+		}
+*/
 	}
 }

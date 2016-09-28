@@ -1,12 +1,7 @@
 package com.mateuszb.onlineShop.controller;
 
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-
 import com.mateuszb.onlineShop.domain.Product;
-import com.sun.xml.internal.org.jvnet.staxex.NamespaceContextEx;
-import com.sun.xml.internal.ws.util.StringUtils;
+import com.mateuszb.onlineShop.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,13 +11,13 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.mateuszb.onlineShop.service.ProductService;
-
 import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/products")
@@ -86,18 +81,19 @@ public class ProductController {
 			throw new RuntimeException("Pr�ba wi�zania niedozwolonych p�l: " + org.springframework.util.StringUtils.arrayToCommaDelimitedString(suppressedFields));
 		}
 
-		MultipartFile productImage = productToBeAdded.getProductImage();
-		String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-
-		if (productImage!=null && !productImage.isEmpty()) {
-			try {
-				productImage.transferTo(new File(rootDirectory+"resources\\images\\"+productToBeAdded.getProductId() + ".png"));
-			} catch (Exception e) {
-				throw new RuntimeException("Pr�ba zapisu obrazka zako�czona niepowodzeniem", e);
-			}
-		}
-
 		productService.addProduct(productToBeAdded);
+
+//		MultipartFile productImage = productToBeAdded.getProductImage();
+		//String rootDirectory = request.getSession().getServletContext().getRealPath("/");
+
+		//if (productImage!=null && !productImage.isEmpty()) {
+		//	try {
+		//		productService.addImage(productImage, productToBeAdded);
+				//productImage.transferTo(new File(rootDirectory+"resources\\images\\"+productToBeAdded.getProductId() + ".png"));
+		//	} catch (Exception e) {
+		//		throw new RuntimeException("Pr�ba zapisu obrazka zako�czona niepowodzeniem", e);
+		//	}
+		//}
 
 		return "redirect:/products/add";
 	}

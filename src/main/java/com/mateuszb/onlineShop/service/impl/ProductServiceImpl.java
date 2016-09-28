@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -43,5 +44,4 @@ public class ProductServiceImpl implements ProductService {
 	public void addProduct(Product product) {
 		productRepository.addProduct(product);
 	}
-
 }

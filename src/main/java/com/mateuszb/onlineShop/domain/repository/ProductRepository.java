@@ -1,6 +1,7 @@
 package com.mateuszb.onlineShop.domain.repository;
 
 import com.mateuszb.onlineShop.domain.Product;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -19,4 +20,5 @@ public interface ProductRepository {
 	Set<Product> getProductsByFilter(Map<String, List<String>> filterParams);
 
 	void addProduct(Product product);
+
 }

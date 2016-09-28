@@ -117,7 +117,7 @@
                     <spring:message code="addProdcut.form.productImage.label"/>
                 </label>
                 <div class="col-lg-10">
-                    <form:input path="productImage" id="productImage" type="file" cssClass="form:input-larde"/>
+                    <input type="file" id="productImage" class="form:input-larde">
                 </div>
             </div>
             <br><br>

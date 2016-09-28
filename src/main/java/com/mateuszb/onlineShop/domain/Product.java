@@ -60,6 +60,10 @@ public class Product {
 		return productImage;
 	}
 
+	public MultipartFile setProductImage(MultipartFile multipartFile){
+		return this.productImage = multipartFile;
+	}
+
 	public void setDescription(String description) {
 		this.description = description;
 	}
