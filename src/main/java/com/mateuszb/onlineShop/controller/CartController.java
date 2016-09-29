@@ -14,6 +14,7 @@ public class CartController {
 
 	@RequestMapping
 	public String get(HttpServletRequest request) {
+
 		return "redirect:/onlineCart/"+request.getSession(true).getId();
 	}
 	
