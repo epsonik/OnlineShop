@@ -16,6 +16,7 @@
             <list>
                 <value>com.mateuszb.onlineShop.dto.Form</value>
                 <value>com.mateuszb.onlineShop.dto.Role</value>
+                <value>com.mateuszb.onlineShop.domain.Product</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -32,6 +33,10 @@
     </bean>
 
     <bean id="roleDAO" class="com.mateuszb.onlineShop.dao.impl.RoleDAOImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="productDAO" class="com.mateuszb.onlineShop.dao.impl.ProductDAOImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 

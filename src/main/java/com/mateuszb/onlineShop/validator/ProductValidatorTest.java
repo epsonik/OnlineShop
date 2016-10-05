@@ -3,7 +3,6 @@ package com.mateuszb.onlineShop.validator;
 import com.mateuszb.onlineShop.domain.Product;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindException;
 import org.springframework.validation.ValidationUtils;
