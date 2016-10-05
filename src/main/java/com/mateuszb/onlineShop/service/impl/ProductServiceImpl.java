@@ -20,11 +20,6 @@ public class ProductServiceImpl implements ProductService {
 
 	private ProductRepository productRepository = null;
 
-	public ProductServiceImpl(){
-		ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-product.xml");
-		productRepository = (ProductRepository) context.getBean("productDAO");
-	}
-
 	public List<Product> getAllProducts() {
 		return productRepository.getAllProducts();
 	}

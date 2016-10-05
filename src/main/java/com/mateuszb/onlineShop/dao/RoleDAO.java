@@ -1,8 +1,9 @@
 package com.mateuszb.onlineShop.dao;
 
+import com.mateuszb.onlineShop.dto.Role;
+
 public interface RoleDAO {
 
-    void insert(int userId);
-    int getRoleId(int userId);
+    void insertRole(Role role);
 
 }

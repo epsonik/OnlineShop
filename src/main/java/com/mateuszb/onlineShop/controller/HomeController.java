@@ -14,14 +14,9 @@ public class HomeController {
 
 	private ProductRepository productRepository = null;
 
-    public HomeController(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-product.xml");
-        productRepository = (ProductRepository) context.getBean("productDAO");
-    }
-
     @RequestMapping(value="/")
 	public String welcome(Model model) {
-        model.addAttribute("products", productRepository.getAllProducts());
+        model.addAttribute("products", productRepository);
 		return "home";
 	}
 }

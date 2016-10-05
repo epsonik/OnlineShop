@@ -1,54 +1,46 @@
 package com.mateuszb.onlineShop.dto;
 
-import java.util.Date;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
-import org.hibernate.search.bridge.String2FieldBridgeAdaptor;
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
-import org.springframework.web.bind.annotation.ModelAttribute;
-
+@Entity
+@Table(name = "USER_TABLE")
 public class Form {
 
+    @Id
+    @Column(name = "id")
     private int id;
 
+    @Column(name = "firstName")
     @Size(min=3, max=20)
     private String firstName;
 
+    @Column(name = "lastName")
     @Size(min=3, max=20)
     private String lastName;
 
+    @Column(name = "email")
     @Email
     private String email;
 
+    @Column(name = "login")
     @NotEmpty
     @Size(min=5,max=20)
     private String login;
 
+    @Column(name = "password")
     @NotEmpty
     @Size(min=5,max=20)
     private String password;
 
-    public Form(){};
-
-    public Form(String firstName, String lastName, String email, String login, String password){
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.login = login;
-        this.password = password;
-    }
-
-    public Form(int id, String firstName, String lastName, String email, String login, String password){
+    public void setId(int id) {
         this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.login = login;
-        this.password = password;
     }
 
     public int getId(){ return id; }

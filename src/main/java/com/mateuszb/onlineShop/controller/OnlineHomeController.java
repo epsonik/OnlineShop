@@ -15,11 +15,6 @@ public class OnlineHomeController {
 
     private ProductRepository productRepository = null;
 
-    public OnlineHomeController(){
-        ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-product.xml");
-        productRepository = (ProductRepository) context.getBean("productDAO");
-    }
-
     @RequestMapping(value="/onlineHome")
     public String welcome(Model model) {
         model.addAttribute("products", productRepository.getAllProducts());

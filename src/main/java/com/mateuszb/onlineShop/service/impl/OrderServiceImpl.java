@@ -14,11 +14,6 @@ public class OrderServiceImpl implements OrderService {
 
 	private ProductRepository productRepository = null;
 
-	public OrderServiceImpl(){
-		ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-product.xml");
-		productRepository = (ProductRepository) context.getBean("productDAO");
-	}
-
 	public void processOrder(String productId, long quantity) {
 		Product productById = productRepository.getProductById(productId);
 
