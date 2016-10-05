@@ -3,13 +3,14 @@ package com.mateuszb.onlineShop.controller;
 import com.mateuszb.onlineShop.dao.FormDAO;
 import com.mateuszb.onlineShop.dao.RoleDAO;
 import com.mateuszb.onlineShop.dto.Form;
-import org.springframework.context.ApplicationContext;
+import com.mateuszb.onlineShop.dto.Role;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 import javax.validation.Valid;
 
 @RequestMapping("/")
@@ -26,13 +27,15 @@ public class RegistrationController {
         if(result.hasErrors()){
             return "registrationForm";
         } else {
-            ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-form.xml");
-            FormDAO formDAO = (FormDAO) context.getBean("formDAO");
-            formDAO.insert(form);
+            ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
+            FormDAO formDAO = context.getBean(FormDAO.class);
+            formDAO.insertForm(form);
 
-            ApplicationContext context1 = new ClassPathXmlApplicationContext("/Spring-module-role.xml");
-            RoleDAO roleDAO = (RoleDAO) context1.getBean("roleDAO");
-            roleDAO.insert(formDAO.findByLogin(form.getLogin()).getId());
+            RoleDAO roleDAO = context.getBean(RoleDAO.class);
+            Role role = new Role();
+            role.setUser_id(formDAO.getIdByLogin(form.getLogin()));
+            role.setRole_id(1);
+            roleDAO.insertRole(role);
 
             return "redirect:/";
         }

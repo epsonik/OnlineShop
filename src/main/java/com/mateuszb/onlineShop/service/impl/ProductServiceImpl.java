@@ -3,13 +3,8 @@ package com.mateuszb.onlineShop.service.impl;
 import com.mateuszb.onlineShop.domain.Product;
 import com.mateuszb.onlineShop.domain.repository.ProductRepository;
 import com.mateuszb.onlineShop.service.ProductService;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -18,11 +13,11 @@ import java.util.Set;
 @Service
 public class ProductServiceImpl implements ProductService {
 
-	private ProductRepository productRepository = null;
+	private final ProductRepository productRepository;
 
-	public ProductServiceImpl(){
-		ApplicationContext context = new ClassPathXmlApplicationContext("/Spring-module-product.xml");
-		productRepository = (ProductRepository) context.getBean("productDAO");
+	@Autowired
+	public ProductServiceImpl(ProductRepository productRepository) {
+		this.productRepository = productRepository;
 	}
 
 	public List<Product> getAllProducts() {
