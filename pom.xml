@@ -110,11 +110,6 @@
           <artifactId>spring-orm</artifactId>
           <version>4.3.3.RELEASE</version>
       </dependency>
-      <dependency>
-          <groupId>org.jboss.logging</groupId>
-          <artifactId>jboss-logging</artifactId>
-          <version>3.3.0.Final</version>
-      </dependency>
   </dependencies>
   <build>
     <finalName>onlineShop</finalName>
