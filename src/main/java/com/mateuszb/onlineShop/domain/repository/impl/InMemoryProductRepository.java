@@ -1,5 +1,6 @@
 package com.mateuszb.onlineShop.domain.repository.impl;
 
+import com.mateuszb.onlineShop.dao.LogsDAO;
 import com.mateuszb.onlineShop.dao.ProductDAO;
 import com.mateuszb.onlineShop.domain.Product;
 import com.mateuszb.onlineShop.domain.repository.ProductRepository;
@@ -8,22 +9,30 @@ import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-
 @Repository
 public class InMemoryProductRepository implements ProductRepository {
 
 	private List<Product> listOfProducts = new ArrayList<Product>();
+	private ClassPathXmlApplicationContext context;
 
 	public List<Product> getAllProducts() {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
-
+		context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
         ProductDAO productDAO = context.getBean(ProductDAO.class);
         listOfProducts = productDAO.getAllProducts();
-
         return listOfProducts;
 	}
 
 	public Product getProductById(String productId) {
+
+        if(listOfProducts.isEmpty()) {
+            getAllProducts();
+        }
+
+		for(Product product: listOfProducts ) {
+			if(product.getProductId().equals(productId)) {
+				return product;
+			}
+		}
 		return null;
 	}
 
@@ -72,5 +81,18 @@ public class InMemoryProductRepository implements ProductRepository {
 
 	public void addProduct(Product product) {
 
-	}
+        //if(listOfProducts.isEmpty()) {
+          //  getAllProducts();
+        //}
+
+        context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
+        ProductDAO productDAO = context.getBean(ProductDAO.class);
+        LogsDAO logsDAO = context.getBean(LogsDAO.class);
+
+        if ( productDAO.insertProduct(product, listOfProducts) ) {
+            logsDAO.insert("Operacja dodwania produktu zakonczona prawidlowo.");
+        } else {
+            logsDAO.insert("Blad operacji dodawania produktu.");
+        }
+    }
 }

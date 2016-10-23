@@ -1,47 +1,34 @@
 package com.mateuszb.onlineShop.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.xml.bind.annotation.XmlTransient;
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "PRODUCT")
 public class Product {
 
-	@Id
-	@Column(name = "id")
+	public MultipartFile productImage;
+
 	private int id;
 
-	@Column(name = "productID")
 	private String productId;
 
-	@Column(name = "name")
 	private String name;
 
-	@Column(name = "description")
 	private String description;
 
-	@Column(name = "unitPrice")
 	private BigDecimal unitPrice;
 
-	@Column(name = "manufacturer_id")
 	private String manufacturer;
 
-	@Column(name = "category_id")
 	private String category;
 
-	@Column(name = "unitsInStock")
 	private long unitsInStock;
 
-	@Column(name = "unitsInOrder")
 	private long unitsInOrder;
 
-	@Column(name = "discontinued")
 	private boolean discontinued;
 
-	@Column(name = "condition")
 	private String condition;
 
 	public Product() {
@@ -89,14 +76,14 @@ public class Product {
 	public String getDescription() {
 		return description;
 	}
-//	@XmlTransient
-//	public MultipartFile getProductImage() {
-//		return productImage;
-//	}
+	@XmlTransient
+	public MultipartFile getProductImage() {
+		return productImage;
+	}
 
-//	public MultipartFile setProductImage(MultipartFile multipartFile){
-//		return this.productImage = multipartFile;
-//	}
+	public MultipartFile setProductImage(MultipartFile multipartFile){
+		return this.productImage = multipartFile;
+	}
 
 	public void setDescription(String description) {
 		this.description = description;

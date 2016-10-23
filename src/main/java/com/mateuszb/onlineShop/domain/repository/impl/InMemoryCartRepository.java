@@ -11,13 +11,10 @@ import java.util.Map;
 public class InMemoryCartRepository implements CartRepository{
 	
 	private Map<String, Cart> listOfCarts;
-	
 
 	public InMemoryCartRepository() {
 		listOfCarts = new HashMap<String,Cart>();
-		
 	}
-	
 	
 	public Cart create(Cart cart) {
 		if(listOfCarts.keySet().contains(cart.getCartId())) {

@@ -16,7 +16,10 @@
             <list>
                 <value>com.mateuszb.onlineShop.dto.Form</value>
                 <value>com.mateuszb.onlineShop.dto.Role</value>
-                <value>com.mateuszb.onlineShop.domain.Product</value>
+                <value>com.mateuszb.onlineShop.dto.ProductDao</value>
+                <value>com.mateuszb.onlineShop.dto.Manufacture</value>
+                <value>com.mateuszb.onlineShop.dto.Category</value>
+                <value>com.mateuszb.onlineShop.dto.Logs</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -37,6 +40,18 @@
     </bean>
 
     <bean id="productDAO" class="com.mateuszb.onlineShop.dao.impl.ProductDAOImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="manufactureDAO" class="com.mateuszb.onlineShop.dao.impl.ManufacutreDAOImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="categoryDAO" class="com.mateuszb.onlineShop.dao.impl.CategoryDAOImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="logsDAO" class="com.mateuszb.onlineShop.dao.impl.LogsDAOImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 

@@ -53,9 +53,7 @@
         <fieldset>
             <legend>Dodaj nowy produkt</legend>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="productId">
-                    <spring:message code="addProdcut.form.productId.label"/>
-                </label>
+                <label class="control-label col-lg-2" for="productId">ProductId</label>
                 <div class="col-lg-10">
                     <form:input path="productId" id="productId" cssClass="form:input-large"/>
                 </div>
@@ -113,9 +111,7 @@
             </div>
             <br><br>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="productImage">
-                    <spring:message code="addProdcut.form.productImage.label"/>
-                </label>
+                <label class="control-label col-lg-2" for="productImage">Zdjecie</label>
                 <div class="col-lg-10">
                     <input type="file" id="productImage" class="form:input-larde">
                 </div>

@@ -9,13 +9,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -98,10 +95,10 @@ public class ProductController {
 		return "redirect:/products/add";
 	}
 
-	@InitBinder
-	public void initialiseBinder(WebDataBinder binder) {
-		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition","productImage");
-	}
+//	@InitBinder
+//	public void initialiseBinder(WebDataBinder binder) {
+//		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition","productImage");
+//	}
 
 	private String getPrincipal() {
 		String userName = null;

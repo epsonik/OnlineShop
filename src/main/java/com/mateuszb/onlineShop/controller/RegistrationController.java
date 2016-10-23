@@ -1,6 +1,7 @@
 package com.mateuszb.onlineShop.controller;
 
 import com.mateuszb.onlineShop.dao.FormDAO;
+import com.mateuszb.onlineShop.dao.LogsDAO;
 import com.mateuszb.onlineShop.dao.RoleDAO;
 import com.mateuszb.onlineShop.dto.Form;
 import com.mateuszb.onlineShop.dto.Role;
@@ -29,6 +30,7 @@ public class RegistrationController {
         } else {
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
             FormDAO formDAO = context.getBean(FormDAO.class);
+
             formDAO.insertForm(form);
 
             RoleDAO roleDAO = context.getBean(RoleDAO.class);
@@ -36,6 +38,10 @@ public class RegistrationController {
             role.setUser_id(formDAO.getIdByLogin(form.getLogin()));
             role.setRole_id(1);
             roleDAO.insertRole(role);
+
+            LogsDAO logsDAO = context.getBean(LogsDAO.class);
+            logsDAO.insert("Rejestracja prawidlowa. Zarejestrowano uzytkownika: name - " +
+                    form.getFirstName() + " login - " + form.getLogin());
 
             return "redirect:/";
         }

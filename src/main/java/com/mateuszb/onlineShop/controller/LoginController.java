@@ -1,5 +1,7 @@
 package com.mateuszb.onlineShop.controller;
 
+import com.mateuszb.onlineShop.dao.LogsDAO;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -36,21 +38,28 @@ public class LoginController implements AuthenticationSuccessHandler, Authentica
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
                                         Authentication authentication) throws IOException, ServletException {
 
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
+        LogsDAO logsDAO = context.getBean(LogsDAO.class);
+
         String role = authentication.getAuthorities().toString();
         String targetUrl = "";
         if(role.contains("2")){
             targetUrl = "products/add";
+            logsDAO.insert("Administrator zalogowany prawidlowo");
         } else if (role.contains("1")) {
             targetUrl = "onlineHome";
+            logsDAO.insert("Uzytkownik zalogowany prawidlowo.");
         } else {
-            System.out.println("jestem tutaj i oznajmiam, że sie coś spieprzyło z uprawnieniami");
+            logsDAO.insert("Autentykacja prawidlowa. Blad uprawnien. Brak podanego uprawnienia.");
         }
 
         httpServletResponse.sendRedirect(targetUrl);
     }
 
     public void onAuthenticationFailure(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, AuthenticationException e) throws IOException, ServletException {
-        System.out.println("Błąd: " + e.getMessage());
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
+        LogsDAO logsDAO = context.getBean(LogsDAO.class);
+        logsDAO.insert("Blad logowania: " + e.getMessage());
         httpServletResponse.sendRedirect("loginfailed");
     }
 }
