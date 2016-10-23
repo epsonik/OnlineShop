@@ -22,6 +22,9 @@ public class ProductDao {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "product_condition")
+    private String condition;
+
     @Column(name = "unitPrice")
     private int unitPrice;
 
@@ -118,6 +121,14 @@ public class ProductDao {
 
     public void setManufacturerId(int manufacturerId) {
         this.manufacturerId = manufacturerId;
+    }
+
+    public String getCondition() {
+        return condition;
+    }
+
+    public void setCondition(String condition) {
+        this.condition = condition;
     }
 
     @Override

@@ -80,11 +80,6 @@ public class InMemoryProductRepository implements ProductRepository {
 	}
 
 	public void addProduct(Product product) {
-
-        //if(listOfProducts.isEmpty()) {
-          //  getAllProducts();
-        //}
-
         context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
         ProductDAO productDAO = context.getBean(ProductDAO.class);
         LogsDAO logsDAO = context.getBean(LogsDAO.class);
