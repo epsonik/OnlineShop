@@ -14,24 +14,9 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/DefaultServlet.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/webcontext/DefaultServlet-context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/DefaultServlet-context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Spring-module.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Role/Spring-Role.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Form/Spring-Form.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/database/Spring-Datasource.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Spring-module-role.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Spring-module-form.xml</file>
           <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/rootApplicationContext.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Product/Spring-Product.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/Spring-module-product.xml</file>
-          <file>file://$MODULE_DIR$/src/test/resources/test-DispatcherServlet-context.xml</file>
-          <file>file://$MODULE_DIR$/src/test/resources/com/packt/webstore/controller/test-DispatcherServlet-context.xml</file>
-          <file>file://$MODULE_DIR$/src/test/resources/com/packt/webstore/validator/test-DispatcherServlet-context.xml</file>
-          <file>file://$MODULE_DIR$/src/test/resources/com/mateuszb.onlineShop/controller/test-DispatcherServlet-context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/com.mateuszb.onlineShop/controller/test-DispatcherServlet-context.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/com.mateuszb.onlineShop/validator/test-DispatcherServlet-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/webcontext/security-context.xml</file>
+          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/webcontext/DispatcherServlet-context.xml</file>
           <file>file://$MODULE_DIR$/src/main/resources/Spring-Datasource.xml</file>
         </fileset>
       </configuration>
@@ -41,14 +26,12 @@
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Spring-4.3.1.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.jboss.logging:jboss-logging:3.2.1.Final" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:4.3.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.3.1.RELEASE" level="project" />

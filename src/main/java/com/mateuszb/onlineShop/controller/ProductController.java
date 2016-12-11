@@ -70,6 +70,7 @@ public class ProductController {
 		return "addProduct";
 	}
 
+
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
 		String[] suppressedFields = result.getSuppressedFields();
@@ -94,11 +95,6 @@ public class ProductController {
 
 		return "redirect:/products/add";
 	}
-
-//	@InitBinder
-//	public void initialiseBinder(WebDataBinder binder) {
-//		binder.setAllowedFields("productId","name","unitPrice","description","manufacturer","category","unitsInStock", "condition","productImage");
-//	}
 
 	private String getPrincipal() {
 		String userName = null;

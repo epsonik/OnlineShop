@@ -58,7 +58,7 @@
 				<strong>Kategoria</strong>: ${product.category}
 			</p>
 			<p>
-				<strong>Stan</strong>: ${product.condition}
+				<strong>Stan</strong>: ${product.product_condition}
 			</p>
 			<p>
 				<strong>Liczba sztuk w magazynie</strong>: ${product.unitsInStock}

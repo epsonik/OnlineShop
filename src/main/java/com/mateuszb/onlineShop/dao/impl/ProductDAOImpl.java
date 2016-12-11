@@ -93,7 +93,7 @@ public class ProductDAOImpl implements ProductDAO {
         productDao.setProductId(product.getProductId());
         productDao.setName(product.getName());
         productDao.setDescription(product.getDescription());
-        productDao.setCondition(product.getCondition());
+        productDao.setCondition(product.getProduct_Condition());
         productDao.setUnitPrice(product.getUnitPrice().intValue());
         productDao.setUnitsInStock((int) product.getUnitsInStock());
         productDao.setCategoryId(categoryDAO.getCategoryId(product.getCategory()));
@@ -110,7 +110,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     public List<Product> getAllProducts() {
         session = this.sessionFactory.openSession();
-        List<ProductDao> productDaoList = session.createQuery("from ProductDao").list();
+        List<ProductDao> productDaoList = session.createQuery("FROM ProductDao").list();
         session.close();
 
         context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
@@ -130,7 +130,7 @@ public class ProductDAOImpl implements ProductDAO {
             product.setProductId(productDao.getProductId());
             product.setName(productDao.getName());
             product.setDescription(productDao.getDescription());
-            product.setCondition(productDao.getCondition());
+            product.setCondition(productDao.getProduct_Condition());
             product.setUnitPrice(BigDecimal.valueOf(productDao.getUnitPrice()));
             product.setUnitsInStock(productDao.getUnitsInStock());
             product.setUnitsInOrder(productDao.getUnitsInOrder());

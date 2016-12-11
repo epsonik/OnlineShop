@@ -29,7 +29,7 @@ public class Product {
 
 	private boolean discontinued;
 
-	private String condition;
+	private String product_condition;
 
 	public Product() {
 		super();
@@ -129,12 +129,12 @@ public class Product {
 		this.discontinued = discontinued;
 	}
 	
-	public String getCondition() {
-		return condition;
+	public String getProduct_Condition() {
+		return product_condition;
 	}
 
-	public void setCondition(String condition) {
-		this.condition = condition;
+	public void setCondition(String product_condition) {
+		this.product_condition = product_condition;
 	}
 
 	@Override

@@ -5,9 +5,9 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/OnlineShop?useSSL=false"/>
-        <property name="username" value="jgac"/>
-        <property name="password" value="jgac"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/onlineShop?useSSL=false"/>
+        <property name="username" value="mbarto"/>
+
     </bean>
 
     <bean id="hibernate5AnnotatedSessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
