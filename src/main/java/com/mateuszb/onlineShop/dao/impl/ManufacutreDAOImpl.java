@@ -31,4 +31,12 @@ public class ManufacutreDAOImpl implements ManufactureDAO {
         List<Manufacture> manufactureList = query.list();
         return manufactureList.get(0).getId();
     }
+
+    public String getManufactureNameById(int id) {
+        Session session = this.sessionFactory.openSession();
+        Query query = session.createQuery("from Manufacture where id = :id");
+        query.setParameter("id", id);
+        List<Manufacture> manufactureList = query.list();
+        return manufactureList.get(0).getName();
+    }
 }

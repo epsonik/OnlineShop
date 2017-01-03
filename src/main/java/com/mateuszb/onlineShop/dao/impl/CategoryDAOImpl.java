@@ -32,4 +32,13 @@ public class CategoryDAOImpl implements CategoryDAO {
         session.close();
         return categoryList.get(0).getId();
     }
+
+    public String getCategoryNameById(int id) {
+        Session session = this.sessionFactory.openSession();
+        Query query = session.createQuery("from Category where id = :id");
+        query.setParameter("id", id);
+        List<Category> categoryList = query.list();
+        session.close();
+        return categoryList.get(0).getName();
+    }
 }
