@@ -128,12 +128,12 @@ public class Product {
 	public void setDiscontinued(boolean discontinued) {
 		this.discontinued = discontinued;
 	}
-	
-	public String getProduct_Condition() {
+
+	public String getProduct_condition() {
 		return product_condition;
 	}
 
-	public void setCondition(String product_condition) {
+	public void setProduct_Condition(String product_condition) {
 		this.product_condition = product_condition;
 	}
 
@@ -167,4 +167,5 @@ public class Product {
 	public String toString() {
 		return "Product [productId=" + productId + ", name=" + name + "]";
 	}
+
 }

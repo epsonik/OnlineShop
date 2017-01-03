@@ -37,8 +37,8 @@
     <bean id="dataSource2" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <property name="url" value="jdbc:mysql://localhost:3306/OnlineShop?useSSL=false"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="username" value="jgac"/>
+        <property name="password" value="jgac"/>
     </bean>
 
     <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>

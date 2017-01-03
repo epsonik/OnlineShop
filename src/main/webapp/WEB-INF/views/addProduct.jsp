@@ -104,9 +104,9 @@
             <div class="form-group">
                 <label class="control-label col-lg-2">Stan</label>
                 <div class="col-lg-10">
-                    <form:radiobutton path="condition" value="New"/> Nowy
-                    <form:radiobutton path="condition" value="Old"/> Uywany
-                    <form:radiobutton path="condition" value="Refurbished"/> Odnowiony
+                    <form:radiobutton path="product_condition" value="Nowy" /> Nowy
+                    <form:radiobutton path="product_condition" value="Uzywany"/> Uzywany
+                    <form:radiobutton path="product_condition" value="Odnowiony"/> Odnowiony
                 </div>
             </div>
             <br><br>

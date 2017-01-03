@@ -8,4 +8,5 @@ public interface ManufactureDAO {
 
     List<Manufacture> getAllManufactures();
     int getManufactureId(String name);
+    String getManufactureNameById(int id);
 }

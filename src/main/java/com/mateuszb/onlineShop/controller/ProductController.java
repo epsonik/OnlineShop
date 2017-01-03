@@ -81,17 +81,9 @@ public class ProductController {
 
 		productService.addProduct(productToBeAdded);
 
-//		MultipartFile productImage = productToBeAdded.getProductImage();
-		//String rootDirectory = request.getSession().getServletContext().getRealPath("/");
-
-		//if (productImage!=null && !productImage.isEmpty()) {
-		//	try {
-		//		productService.addImage(productImage, productToBeAdded);
-				//productImage.transferTo(new File(rootDirectory+"resources\\images\\"+productToBeAdded.getProductId() + ".png"));
-		//	} catch (Exception e) {
-		//		throw new RuntimeException("Pr�ba zapisu obrazka zako�czona niepowodzeniem", e);
-		//	}
-		//}
+		// te dwie wartości są nullami
+		// productToBeAdded.getProduct_condition()
+		// productToBeAdded.getProductImage().getName()
 
 		return "redirect:/products/add";
 	}
