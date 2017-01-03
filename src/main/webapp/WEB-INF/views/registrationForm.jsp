@@ -1,5 +1,5 @@
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
@@ -15,7 +15,8 @@
           integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
 
 </head>
 <body>
@@ -42,36 +43,40 @@
     </div>
 </nav>
 
-<section>
+<section section="container">
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj w sklepie internetowym! </h1>
+            <br>
+            <h1> Witaj w sklepie internetowym! </h1>
             <p> Wyjatkowym i jedynym sklepie internetowym </p>
             <h2>Formularz rejestracyjny</h2>
-            <br>
-            <form:form action="${pageContext.request.contextPath}/registration" modelAttribute="Form" method="post"> 
-                Imię: 
-                <form:input path="firstName" id="firstName"/>
-                 <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="firstName"></form:errors></c:if> 
-                <br> 
-                Nazwisko: 
-                <form:input path="lastName" id="lastName"/> 
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="lastName"></form:errors></c:if> 
-                <br> 
-                Adres email: 
-                <form:input path="email" id="email"/>
-                <c:if test="${pageContext.request.method == 'POST'}"><form path="email"></form></c:if> 
-                <br> 
-                Login: 
-                <form:input path="login" id="login"/> 
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="login"></form:errors></c:if> 
-                <br> 
-                Hasło: 
-                <form:input path="password" id="password" type="password"/>
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="password"></form:errors></c:if> 
-                <br>
-                <input type="submit" value="Wyslij formularz"/>
+            <div class="col-md-4 col-md-offset-1">
+
+                <form:form action="${pageContext.request.contextPath}/registration" modelAttribute="Form"
+                           method="post"> 
+                <form:input class="form-control" path="firstName" id="firstName" placeholder="Imię"/>
+                <c:if test="${pageContext.request.method == 'POST'}">
+                    <form:errors path="firstName"></form:errors></c:if> 
+                <form:input class="form-control" path="lastName" id="lastName" placeholder="Nazwisko"/> 
+
+
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors
+                        path="lastName"></form:errors></c:if> 
+
+                <form:input class="form-control" path="email" id="email" placeholder="Email"/><c:if
+                    test="${pageContext.request.method == 'POST'}"><form:errors
+                    path="email"></form:errors></c:if> 
+
+                <form:input class="form-control" path="login" id="login" placeholder="Login"/> <c:if
+                    test="${pageContext.request.method == 'POST'}"><form:errors
+                    path="login"></form:errors></c:if> 
+                <form:input class="form-control" path="password" id="password" type="password"
+                            placeholder="Hasło"/><c:if test="${pageContext.request.method == 'POST'}"><form:errors
+                    path="password"></form:errors></c:if> 
+                <input class="btn btn-lg btn-success btn-block" type="submit" value="Wyslij formularz"/>
+            </div>
             </form:form>
+
         </div>
     </div>
 </section>

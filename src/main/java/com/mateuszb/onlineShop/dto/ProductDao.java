@@ -22,6 +22,8 @@ public class ProductDao {
     @Column(name = "description")
     private String description;
 
+
+
     @Column(name = "product_condition")
     private String product_condition;
 
@@ -127,10 +129,9 @@ public class ProductDao {
         return product_condition;
     }
 
-    public void setCondition(String product_condition) {
-        this.product_condition= product_condition;
+    public void setProduct_Condition(String product_Condition) {
+        this.product_condition = product_condition;
     }
-
     @Override
     public String toString() {
         return "Produkt: " + name;

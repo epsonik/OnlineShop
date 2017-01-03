@@ -68,8 +68,6 @@
             </p>
             <h4>${product.unitPrice} PLN</h4>
             <p>
-                <a href="<spring:url value="/onlineCart" />" class="btn btn-warning btn-large" ng-click="addToCart('${product.productId}')">
-                    <span class="glyphicon-shopping-cart glyphicon"></span> Zamów teraz </a>
                 <a href="<spring:url value="/onlineHome" />" class="btn btn-default">
                 <span class="glyphicon-hand-left glyphicon"></span> Powrót</a>
             </p>

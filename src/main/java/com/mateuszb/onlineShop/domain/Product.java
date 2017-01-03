@@ -128,7 +128,7 @@ public class Product {
 	public void setDiscontinued(boolean discontinued) {
 		this.discontinued = discontinued;
 	}
-	
+
 	public String getProduct_Condition() {
 		return product_condition;
 	}

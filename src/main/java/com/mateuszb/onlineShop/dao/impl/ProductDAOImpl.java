@@ -93,7 +93,7 @@ public class ProductDAOImpl implements ProductDAO {
         productDao.setProductId(product.getProductId());
         productDao.setName(product.getName());
         productDao.setDescription(product.getDescription());
-        productDao.setCondition(product.getProduct_Condition());
+        productDao.setProduct_Condition(product.getProduct_Condition());
         productDao.setUnitPrice(product.getUnitPrice().intValue());
         productDao.setUnitsInStock((int) product.getUnitsInStock());
         productDao.setCategoryId(categoryDAO.getCategoryId(product.getCategory()));
