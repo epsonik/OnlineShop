@@ -50,6 +50,21 @@
             <h1> Witaj w sklepie internetowym! </h1>
             <p> Wyjatkowym i jedynym sklepie internetowym </p>
             <h2>Formularz rejestracyjny</h2>
+            <c:if test="${not empty error2}">
+                <div class="alert alert-danger">
+                    <spring:message text="Użytkownik mbarto nie ma dostępu do serwisu"/><br/>
+                </div>
+            </c:if>
+            <c:if test="${not empty error3}">
+                <div class="alert alert-danger">
+                    <spring:message text="Domena .gmail nie jest dozwolona"/><br/>
+                </div>
+            </c:if>
+            <c:if test="${not empty error4}">
+                <div class="alert alert-danger">
+                    <spring:message text="Użytkownik rzedkowski nie ma dostępu."/><br/>
+                </div>
+            </c:if>
             <div class="col-md-4 col-md-offset-1">
 
                 <form:form action="${pageContext.request.contextPath}/registration" modelAttribute="Form"

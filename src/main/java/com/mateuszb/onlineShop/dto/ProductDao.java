@@ -1,9 +1,12 @@
 package com.mateuszb.onlineShop.dto;
 
+import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.Min;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "PRODUCT")
@@ -14,17 +17,19 @@ public class ProductDao {
     private int id;
 
     @Column(name = "productID")
+    @Size(min=3, max=20)
     private String productId;
 
     @Column(name = "name")
+    @Size(min=3, max=20)
     private String name;
 
     @Column(name = "description")
+    @Size(min=3, max=200)
     private String description;
 
-
-
     @Column(name = "product_condition")
+    @NotEmpty
     private String product_condition;
 
     @Column(name = "unitPrice")
@@ -125,13 +130,14 @@ public class ProductDao {
         this.manufacturerId = manufacturerId;
     }
 
-    public String getProduct_Condition() {
+    public String getProduct_condition() {
         return product_condition;
     }
 
-    public void setProduct_Condition(String product_Condition) {
+    public void setProduct_condition(String product_condition) {
         this.product_condition = product_condition;
     }
+
     @Override
     public String toString() {
         return "Produkt: " + name;

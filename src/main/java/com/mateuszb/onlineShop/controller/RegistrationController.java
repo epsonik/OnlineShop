@@ -7,6 +7,7 @@ import com.mateuszb.onlineShop.dto.Form;
 import com.mateuszb.onlineShop.dto.Role;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,21 @@ public class RegistrationController {
         return "registrationForm";
     }
 
+    @RequestMapping(value = "/loginfailure", method = RequestMethod.GET)
+    public String loginfailure(Model model) {
+        model.addAttribute("error2", "true");
+        return "registrationForm";
+    }
+    @RequestMapping(value = "/mailfailed", method = RequestMethod.GET)
+    public String mailerror(Model model) {
+        model.addAttribute("error3", "true");
+        return "registrationForm";
+    }
+    @RequestMapping(value = "/firstnamefailed", method = RequestMethod.GET)
+    public String lastnameerror(Model model) {
+        model.addAttribute("error4", "true");
+        return "registrationForm";
+    }
     @RequestMapping(value="/registration", method=RequestMethod.POST)
     public String handleTheForm(@ModelAttribute("Form") @Valid Form form, BindingResult result){
         if(result.hasErrors()){
@@ -31,6 +47,16 @@ public class RegistrationController {
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
             FormDAO formDAO = context.getBean(FormDAO.class);
 
+            Validator validator = new Validator(form);
+                    if(validator.checkLogin()){
+                        return "redirect:/loginfailed";
+                    }
+                    if(validator.checkFirstName()){
+                        return "redirect:/firstnamefailed";
+                    }
+                    if(validator.checkMail()){
+                        return "redirect:/mailfailed";
+                    }
             formDAO.insertForm(form);
 
             RoleDAO roleDAO = context.getBean(RoleDAO.class);

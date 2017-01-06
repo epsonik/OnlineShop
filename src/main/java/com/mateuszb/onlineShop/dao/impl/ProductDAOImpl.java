@@ -95,7 +95,7 @@ public class ProductDAOImpl implements ProductDAO {
         productDao.setProductId(product.getProductId());
         productDao.setName(product.getName());
         productDao.setDescription(product.getDescription());
-        productDao.setCondition(product.getProduct_condition());
+        productDao.setProduct_condition(product.getProduct_condition());
         productDao.setUnitPrice(product.getUnitPrice().intValue());
         productDao.setUnitsInStock((int) product.getUnitsInStock());
         productDao.setCategoryId(categoryDAO.getCategoryId(product.getCategory()));
@@ -140,7 +140,7 @@ public class ProductDAOImpl implements ProductDAO {
             preparedStmt.setString(1, product.getProductId());
             preparedStmt.setString(2, product.getName());
             preparedStmt.setString(3, product.getDescription());
-            preparedStmt.setString(4, product.getProduct_Condition());
+            preparedStmt.setString(4, product.getProduct_condition());
             preparedStmt.setInt(5, product.getUnitPrice());
             preparedStmt.setInt(6, product.getUnitsInStock());
             preparedStmt.setInt(7, product.getCategoryId());
@@ -172,7 +172,7 @@ public class ProductDAOImpl implements ProductDAO {
         List<ProductDao> productDaoList = null;
         try {
             tx = session.beginTransaction();
-            productDaoList = session.createQuery("from ProductDao").list();
+            productDaoList = session.createQuery("FROM ProductDao").list();
             tx.commit();
         } catch (HibernateException e) {
             if (tx != null) {
@@ -192,7 +192,7 @@ public class ProductDAOImpl implements ProductDAO {
                 product.setProductId(productDao.getProductId());
                 product.setName(productDao.getName());
                 product.setDescription(productDao.getDescription());
-                product.setProduct_Condition(productDao.getProduct_Condition());
+                product.setProduct_condition(productDao.getProduct_condition());
                 product.setUnitPrice(BigDecimal.valueOf(productDao.getUnitPrice()));
                 product.setUnitsInStock(productDao.getUnitsInStock());
                 product.setUnitsInOrder(productDao.getUnitsInOrder());
@@ -228,7 +228,7 @@ public class ProductDAOImpl implements ProductDAO {
                 product.setProductId(resultSet.getString("productID"));
                 product.setName(resultSet.getString("name"));
                 product.setDescription(resultSet.getString("description"));
-                product.setProduct_Condition(resultSet.getString("product_condition"));
+                product.setProduct_condition(resultSet.getString("product_condition"));
                 product.setUnitPrice(BigDecimal.valueOf(resultSet.getInt("unitPrice")));
                 product.setUnitsInStock(resultSet.getInt("unitsInStock"));
                 product.setCategory(categoryDAO.getCategoryNameById(resultSet.getInt("category_id")));

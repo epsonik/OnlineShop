@@ -133,7 +133,7 @@ public class Product {
 		return product_condition;
 	}
 
-	public void setProduct_Condition(String product_condition) {
+	public void setProduct_condition(String product_condition) {
 		this.product_condition = product_condition;
 	}
 

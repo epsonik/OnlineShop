@@ -62,4 +62,5 @@ public class LoginController implements AuthenticationSuccessHandler, Authentica
         logsDAO.insert("Blad logowania: " + e.getMessage());
         httpServletResponse.sendRedirect("loginfailed");
     }
+
 }

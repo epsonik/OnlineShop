@@ -21,7 +21,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href='<spring:url value="/products/add"/>'>Mati Shop</a>
+            <a class="navbar-brand" href='<spring:url value="/"/>'>Mati Shop</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -44,7 +44,6 @@
     <div class="jumbotron">
         <div class="container">
             <br><h1> Witaj Administratorze! </h1>
-            <br><h3>Dodaj produkt</h3>
         </div>
     </div>
 </section>
@@ -53,7 +52,9 @@
         <fieldset>
             <legend>Dodaj nowy produkt</legend>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="productId">ProductId</label>
+                <label class="control-label col-lg-2" for="productId">
+Id Produktu
+                </label>
                 <div class="col-lg-10">
                     <form:input path="productId" id="productId" cssClass="form:input-large"/>
                 </div>
@@ -96,6 +97,7 @@
             <br><br>
             <div class="form-group">
                 <label class="control-label col-lg-2" for="unitsInStock">Liczba sztuk w magazynie</label>
+
                 <div class="col-lg-10">
                     <form:input path="unitsInStock" id="unitsInStock" cssClass="form:input-large"/>
                 </div>
@@ -104,14 +106,16 @@
             <div class="form-group">
                 <label class="control-label col-lg-2">Stan</label>
                 <div class="col-lg-10">
-                    <form:radiobutton path="product_condition" value="Nowy" /> Nowy
-                    <form:radiobutton path="product_condition" value="Uzywany"/> Uzywany
-                    <form:radiobutton path="product_condition" value="Odnowiony"/> Odnowiony
+                    <form:radiobutton path="product_condition" value="New"/> Nowy
+                    <form:radiobutton path="product_condition" value="Old"/> Uzywany
+                    <form:radiobutton path="product_condition" value="Refurbished"/> Odnowiony
                 </div>
             </div>
             <br><br>
             <div class="form-group">
-                <label class="control-label col-lg-2" for="productImage">Zdjecie</label>
+                <label class="control-label col-lg-2" for="productImage">
+                Zdjęcie
+                </label>
                 <div class="col-lg-10">
                     <input type="file" id="productImage" class="form:input-larde">
                 </div>
