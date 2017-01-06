@@ -15,6 +15,8 @@
         <property name="annotatedClasses">
             <list>
                 <value>com.mateuszb.onlineShop.dto.Form</value>
+                <value>com.mateuszb.onlineShop.dto.User</value>
+                <value>com.mateuszb.onlineShop.dto.ContactData</value>
                 <value>com.mateuszb.onlineShop.dto.Role</value>
                 <value>com.mateuszb.onlineShop.dto.ProductDao</value>
                 <value>com.mateuszb.onlineShop.dto.Manufacture</value>
@@ -35,6 +37,14 @@
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 
+    <bean id="userDAO" class="com.mateuszb.onlineShop.dao.impl.UserDAOImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
+    <bean id="contactDataDAO" class="com.mateuszb.onlineShop.dao.impl.ContactDataDAOImpl">
+        <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
+    </bean>
+
     <bean id="roleDAO" class="com.mateuszb.onlineShop.dao.impl.RoleDAOImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
@@ -43,7 +53,7 @@
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="manufactureDAO" class="com.mateuszb.onlineShop.dao.impl.ManufacutreDAOImpl">
+    <bean id="manufactureDAO" class="com.mateuszb.onlineShop.dao.impl.ManufactureDAOImpl">
         <property name="sessionFactory" ref="hibernate5AnnotatedSessionFactory"/>
     </bean>
 

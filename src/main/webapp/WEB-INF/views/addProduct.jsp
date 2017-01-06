@@ -44,6 +44,7 @@
     <div class="jumbotron">
         <div class="container">
             <br><h1> Witaj Administratorze! </h1>
+            <br><h3>Dodaj produkt</h3>
         </div>
     </div>
 </section>
@@ -106,9 +107,9 @@ Id Produktu
             <div class="form-group">
                 <label class="control-label col-lg-2">Stan</label>
                 <div class="col-lg-10">
-                    <form:radiobutton path="product_condition" value="New"/> Nowy
-                    <form:radiobutton path="product_condition" value="Old"/> Uzywany
-                    <form:radiobutton path="product_condition" value="Refurbished"/> Odnowiony
+                    <form:radiobutton path="product_condition" value="Nowy" /> Nowy
+                    <form:radiobutton path="product_condition" value="Uzywany"/> Uzywany
+                    <form:radiobutton path="product_condition" value="Odnowiony"/> Odnowiony
                 </div>
             </div>
             <br><br>

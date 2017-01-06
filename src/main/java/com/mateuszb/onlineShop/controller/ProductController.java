@@ -73,7 +73,7 @@ public class ProductController {
 
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
-	public String processAddNewProductForm(@ModelAttribute("newProduct") @Valid Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
+	public String processAddNewProductForm(@ModelAttribute("newProduct") Product productToBeAdded, ModelMap map, BindingResult result, HttpServletRequest request) {
 		String[] suppressedFields = result.getSuppressedFields();
 
 		if (suppressedFields.length > 0) {
@@ -82,6 +82,8 @@ public class ProductController {
 
 		productService.addProduct(productToBeAdded);
 
+		// te dwie wartości są nullami
+		// productToBeAdded.getProduct_condition()
 		// productToBeAdded.getProductImage().getName()
 
 		return "redirect:/products/add";

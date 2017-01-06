@@ -51,6 +51,20 @@
     <div class="jumbotron">
         <div class="container">
             <br><h1> Witaj ${user}! </h1><br>
+            Twoje dane osobwe:
+            <br><br>
+            ${contactData.firstName}
+            <br>
+            ${contactData.lastName}
+            <br>
+            ${contactData.email}
+            <br><br>
+            Twoje dane adresowe:
+            <br>
+            ${contactData.street}
+            <br>
+            ${contactData.city}
+            <br><br>
             <h2>Produkty</h2>
             <p>Wszystkie produkty dostępne w naszym sklepie</p>
         </div>
