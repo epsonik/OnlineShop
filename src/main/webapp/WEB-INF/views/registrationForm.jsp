@@ -108,8 +108,11 @@
                 <form:input class="form-control" path="password" id="password" type="password"
                             placeholder="Hasło"/><c:if test="${pageContext.request.method == 'POST'}"><form:errors
                     path="password"></form:errors></c:if> 
-                <input class="btn btn-lg btn-success btn-block" type="submit" value="Wyslij formularz"/>
-            </div>
+                <form:input path="street" id="street" class="form-control" placeholder="Ulica"/>
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="street"></form:errors></c:if> 
+                <form:input path="city" id="city" placeholder="Miasto" class="form-control"/>
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="city"></form:errors></c:if> 
+                    <input type="submit" class="btn btn-lg btn-success btn-block" value="Wyslij formularz"/>
             </form:form>
 
         </div>
