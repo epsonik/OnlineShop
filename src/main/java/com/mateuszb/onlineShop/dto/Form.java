@@ -35,10 +35,6 @@ public class Form {
     @Size(min=3, max=20)
     private String lastName;
 
-    @Column(name = "email")
-    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?:[a-zA-Z]{2,6})$")
-    private String email;
-
     @Column(name = "street")
     @Size(min=3, max = 20)
     private String street;
@@ -50,6 +46,10 @@ public class Form {
     public void setId(int id) {
         this.id = id;
     }
+
+    @Column(name = "email")
+    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?:[a-zA-Z]{2,6})$")
+    private String email;
 
     public int getId(){ return id; }
 

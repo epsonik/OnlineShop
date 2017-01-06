@@ -50,19 +50,39 @@
             <h1> Witaj w sklepie internetowym! </h1>
             <p> Wyjatkowym i jedynym sklepie internetowym </p>
             <h2>Formularz rejestracyjny</h2>
-            <c:if test="${not empty error2}">
+            <c:if test="${not empty loginerror}">
                 <div class="alert alert-danger">
-                    <spring:message text="Użytkownik mbarto nie ma dostępu do serwisu"/><br/>
+                    <spring:message text="Loigin  size must be between 3 and 20 "/><br/>
                 </div>
             </c:if>
-            <c:if test="${not empty error3}">
+            <c:if test="${not empty firstnameerror}">
                 <div class="alert alert-danger">
-                    <spring:message text="Domena .gmail nie jest dozwolona"/><br/>
+                    <spring:message text=" First name size must be between 3 and 20 "/><br/>
                 </div>
             </c:if>
-            <c:if test="${not empty error4}">
+            <c:if test="${not empty passworderror}">
                 <div class="alert alert-danger">
-                    <spring:message text="Użytkownik rzedkowski nie ma dostępu."/><br/>
+                    <spring:message text="  Password size must be between 3 and 20 "/><br/>
+                </div>
+            </c:if>
+            <c:if test="${not empty lastnameerror}">
+                <div class="alert alert-danger">
+                    <spring:message text="Last name size must be between 3 and 20"/><br/>
+                </div>
+            </c:if>
+            <c:if test="${not empty cityerror}">
+                <div class="alert alert-danger">
+                    <spring:message text="City size must be between 3 and 20"/><br/>
+                </div>
+            </c:if>
+            <c:if test="${not empty streeterror}">
+                <div class="alert alert-danger">
+                    <spring:message text="Street size must be between 3 and 20"/><br/>
+                </div>
+            </c:if>
+            <c:if test="${not empty mailerror}">
+                <div class="alert alert-danger">
+                    <spring:message text="Mail must match ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.(?:[a-zA-Z]{2,6})$"/><br/>
                 </div>
             </c:if>
             <div class="col-md-4 col-md-offset-1">
