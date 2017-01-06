@@ -27,27 +27,12 @@ public class FormDAOImpl implements FormDAO {
         session.close();
     }
 
-    public boolean checkEmail(String email) {
-        session = this.sessionFactory.openSession();
-        Query query = session.createQuery("FROM Form WHERE email = :email");
-        query.setParameter("email", email);
-        List<Form> emailList = query.list();
-        return !emailList.isEmpty();
-    }
-
-    public boolean checkLogin(String login) {
-        session = this.sessionFactory.openSession();
-        Query query = session.createQuery("FROM Form WHERE login = :login");
-        query.setParameter("login", login);
-        List<Form> loginList = query.list();
-        return !loginList.isEmpty();
-    }
-
-    public int getIdByLogin(String login) {
+    public Form getDataByLogin(String login) {
         session = this.sessionFactory.openSession();
         Query query = session.createQuery("FROM Form WHERE login = :login");
         query.setParameter("login", login);
         List<Form> personList = query.list();
-        return personList.get(0).getId();
+        session.close();
+        return personList.get(0);
     }
 }

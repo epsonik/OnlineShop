@@ -1,8 +1,8 @@
 package com.mateuszb.onlineShop.controller;
 
-import com.mateuszb.onlineShop.dao.FormDAO;
-import com.mateuszb.onlineShop.dao.LogsDAO;
-import com.mateuszb.onlineShop.dao.RoleDAO;
+import com.mateuszb.onlineShop.Registration.Registration;
+import com.mateuszb.onlineShop.dao.*;
+import com.mateuszb.onlineShop.dto.ContactData;
 import com.mateuszb.onlineShop.dto.Form;
 import com.mateuszb.onlineShop.dto.Role;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -29,26 +29,25 @@ public class RegistrationController {
             return "registrationForm";
         } else {
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Spring-Datasource.xml");
-            FormDAO formDAO = context.getBean(FormDAO.class);
 
-            formDAO.insertForm(form);
+            UserDAO userDAO = context.getBean(UserDAO.class);
+            if (userDAO.checkExistingLogin(form.getLogin())) {
+                // istnieje już taki użytkownik w bazie
+                System.out.println("Trzeba coś z tym zrobić");
+            } else {
+                // dodajemy nowego użytkownika
+                FormDAO formDAO = context.getBean(FormDAO.class);
+                formDAO.insertForm(form);
 
-            RoleDAO roleDAO = context.getBean(RoleDAO.class);
-            Role role = new Role();
-            role.setUser_id(formDAO.getIdByLogin(form.getLogin()));
-            role.setRole_id(1);
-            roleDAO.insertRole(role);
-
-            LogsDAO logsDAO = context.getBean(LogsDAO.class);
-            logsDAO.insert("Rejestracja prawidlowa. Zarejestrowano uzytkownika: name - " +
-                    form.getFirstName() + " login - " + form.getLogin());
-
+                Registration registration = new Registration();
+                registration.addNewUser(form.getLogin());
+            }
             return "redirect:/";
         }
     }
 
     @ModelAttribute("Form")
-    public Form getFormularz(){
+    public Form getForm(){
         return new Form();
     }
 }

@@ -9,13 +9,14 @@ import org.hibernate.Transaction;
 public class RoleDAOImpl implements RoleDAO {
 
     private SessionFactory sessionFactory;
+    private Session session;
 
     public void setSessionFactory(SessionFactory sessionFactory) {
         this.sessionFactory = sessionFactory;
     }
 
     public void insertRole(Role role) {
-        Session session = this.sessionFactory.openSession();
+        session = this.sessionFactory.openSession();
         Transaction tx = session.beginTransaction();
         session.persist(role);
         tx.commit();

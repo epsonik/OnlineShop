@@ -10,63 +10,37 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name = "TMP_FORM_DATA")
-public class Form {
+@Table(name = "CONTACT_DATA")
+public class ContactData {
 
     @Id
     @Column(name = "id")
     private int id;
 
-    @Column(name = "login")
-    @NotEmpty
-    @Size(min=5,max=20)
-    private String login;
-
-    @Column(name = "password")
-    @NotEmpty
-    @Size(min=5,max=20)
-    private String password;
+    @Column(name = "user_id")
+    private int user_id;
 
     @Column(name = "firstName")
-    @Size(min=3, max=20)
     private String firstName;
 
     @Column(name = "lastName")
-    @Size(min=3, max=20)
     private String lastName;
 
     @Column(name = "email")
-    @Pattern(regexp ="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.(?:[a-zA-Z]{2,6})$")
     private String email;
 
     @Column(name = "street")
-    @Size(min=3, max = 20)
     private String street;
 
     @Column(name = "city")
-    @Size(min=3, max = 30)
     private String city;
 
-    public void setId(int id) {
-        this.id = id;
+    public int getUser_id() {
+        return user_id;
     }
 
-    public int getId(){ return id; }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     public String getStreet() {
@@ -84,6 +58,12 @@ public class Form {
     public void setCity(String city) {
         this.city = city;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId(){ return id; }
 
     public String getFirstName() {
         return firstName;
@@ -111,6 +91,6 @@ public class Form {
 
     @Override
     public String toString(){
-        return " login: " + login + " hasło: " + password;
+        return "Imie: " + firstName + " nazwisko: " + lastName + " email: " + email + " ulica: " + street + " miasto: " + city;
     }
 }

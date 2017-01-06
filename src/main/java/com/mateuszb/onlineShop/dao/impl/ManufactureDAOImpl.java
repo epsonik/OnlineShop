@@ -8,7 +8,7 @@ import org.hibernate.query.Query;
 
 import java.util.List;
 
-public class ManufacutreDAOImpl implements ManufactureDAO {
+public class ManufactureDAOImpl implements ManufactureDAO {
 
     private SessionFactory sessionFactory;
     private Session session;

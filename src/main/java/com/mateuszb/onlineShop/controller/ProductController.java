@@ -79,11 +79,11 @@ public class ProductController {
 			throw new RuntimeException("Pr�ba wi�zania niedozwolonych p�l: " + org.springframework.util.StringUtils.arrayToCommaDelimitedString(suppressedFields));
 		}
 
-		productService.addProduct(productToBeAdded);
-
 		// te dwie wartości są nullami
-		// productToBeAdded.getProduct_condition()
+		System.out.println("Stan produktu: " + productToBeAdded.getProduct_condition());
 		// productToBeAdded.getProductImage().getName()
+
+		productService.addProduct(productToBeAdded);
 
 		return "redirect:/products/add";
 	}

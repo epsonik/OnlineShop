@@ -106,7 +106,7 @@
                 <div class="col-lg-10">
                     <form:radiobutton path="product_condition" value="Nowy" /> Nowy
                     <form:radiobutton path="product_condition" value="Uzywany"/> Uzywany
-                    <form:radiobutton path="product_condition" value="Odnowiony"/> Odnowiony
+                    <form:radiobutton path="product_condition" value="Odnowiony"/>Odnowiony
                 </div>
             </div>
             <br><br>

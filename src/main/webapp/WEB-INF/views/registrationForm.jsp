@@ -45,11 +45,22 @@
 <section>
     <div class="jumbotron">
         <div class="container">
-            <br><h1> Witaj w sklepie internetowym! </h1>
-            <p> Wyjatkowym i jedynym sklepie internetowym </p>
+            <br>
             <h2>Formularz rejestracyjny</h2>
             <br>
             <form:form action="${pageContext.request.contextPath}/registration" modelAttribute="Form" method="post"> 
+                Dane do logowania
+                <br>
+                Login: 
+                <form:input path="login" id="login"/> 
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="login"></form:errors></c:if> 
+                <br> 
+                Hasło: 
+                <form:input path="password" id="password" type="password"/>
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="password"></form:errors></c:if> 
+                <br>
+                Dane osobowe
+                <br>
                 Imię: 
                 <form:input path="firstName" id="firstName"/>
                  <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="firstName"></form:errors></c:if> 
@@ -62,13 +73,15 @@
                 <form:input path="email" id="email"/>
                 <c:if test="${pageContext.request.method == 'POST'}"><form path="email"></form></c:if> 
                 <br> 
-                Login: 
-                <form:input path="login" id="login"/> 
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="login"></form:errors></c:if> 
-                <br> 
-                Hasło: 
-                <form:input path="password" id="password" type="password"/>
-                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="password"></form:errors></c:if> 
+                Dane adresowe
+                <br>
+                Ulica:
+                <form:input path="street" id="street"/>
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="street"></form:errors></c:if> 
+                <br>
+                Miasto:
+                <form:input path="city" id="city"/>
+                <c:if test="${pageContext.request.method == 'POST'}"><form:errors path="city"></form:errors></c:if> 
                 <br>
                 <input type="submit" value="Wyslij formularz"/>
             </form:form>
